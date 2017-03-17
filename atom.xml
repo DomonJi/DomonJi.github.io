@@ -4,9 +4,9 @@
   <subtitle>用代码创造艺术</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://domonji.github.io/"/>
   <updated>2017-03-13T03:01:26.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://domonji.github.io/</id>
   
   <author>
     <name>Domon Ji</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/13/hello-world/"/>
-    <id>http://yoursite.com/2017/03/13/hello-world/</id>
+    <link href="http://domonji.github.io/2017/03/13/hello-world/"/>
+    <id>http://domonji.github.io/2017/03/13/hello-world/</id>
     <published>2017-03-13T03:01:26.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>WEROUND</title>
-    <link href="http://yoursite.com/2016/05/14/weround/"/>
-    <id>http://yoursite.com/2016/05/14/weround/</id>
+    <link href="http://domonji.github.io/2016/05/14/weround/"/>
+    <id>http://domonji.github.io/2016/05/14/weround/</id>
     <published>2016-05-14T08:41:56.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -74,15 +74,15 @@
     
     </summary>
     
-      <category term="Works" scheme="http://yoursite.com/categories/Works/"/>
+      <category term="Works" scheme="http://domonji.github.io/categories/Works/"/>
     
     
   </entry>
   
   <entry>
     <title>黄山之巅</title>
-    <link href="http://yoursite.com/2016/02/12/mount-huang/"/>
-    <id>http://yoursite.com/2016/02/12/mount-huang/</id>
+    <link href="http://domonji.github.io/2016/02/12/mount-huang/"/>
+    <id>http://domonji.github.io/2016/02/12/mount-huang/</id>
     <published>2016-02-12T09:00:46.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -100,25 +100,25 @@
     
     </summary>
     
-      <category term="Photograph" scheme="http://yoursite.com/categories/Photograph/"/>
+      <category term="Photograph" scheme="http://domonji.github.io/categories/Photograph/"/>
     
     
-      <category term="photograph" scheme="http://yoursite.com/tags/photograph/"/>
+      <category term="photograph" scheme="http://domonji.github.io/tags/photograph/"/>
     
-      <category term="travel" scheme="http://yoursite.com/tags/travel/"/>
+      <category term="travel" scheme="http://domonji.github.io/tags/travel/"/>
     
-      <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
+      <category term="摄影" scheme="http://domonji.github.io/tags/%E6%91%84%E5%BD%B1/"/>
     
-      <category term="旅行" scheme="http://yoursite.com/tags/%E6%97%85%E8%A1%8C/"/>
+      <category term="旅行" scheme="http://domonji.github.io/tags/%E6%97%85%E8%A1%8C/"/>
     
-      <category term="黄山" scheme="http://yoursite.com/tags/%E9%BB%84%E5%B1%B1/"/>
+      <category term="黄山" scheme="http://domonji.github.io/tags/%E9%BB%84%E5%B1%B1/"/>
     
   </entry>
   
   <entry>
     <title>海边的孩子</title>
-    <link href="http://yoursite.com/2016/02/12/kids-in-sea/"/>
-    <id>http://yoursite.com/2016/02/12/kids-in-sea/</id>
+    <link href="http://domonji.github.io/2016/02/12/kids-in-sea/"/>
+    <id>http://domonji.github.io/2016/02/12/kids-in-sea/</id>
     <published>2016-02-12T08:36:46.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -136,25 +136,25 @@
     
     </summary>
     
-      <category term="Photograph" scheme="http://yoursite.com/categories/Photograph/"/>
+      <category term="Photograph" scheme="http://domonji.github.io/categories/Photograph/"/>
     
     
-      <category term="photograph" scheme="http://yoursite.com/tags/photograph/"/>
+      <category term="photograph" scheme="http://domonji.github.io/tags/photograph/"/>
     
-      <category term="travel" scheme="http://yoursite.com/tags/travel/"/>
+      <category term="travel" scheme="http://domonji.github.io/tags/travel/"/>
     
-      <category term="三亚" scheme="http://yoursite.com/tags/%E4%B8%89%E4%BA%9A/"/>
+      <category term="三亚" scheme="http://domonji.github.io/tags/%E4%B8%89%E4%BA%9A/"/>
     
-      <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
+      <category term="摄影" scheme="http://domonji.github.io/tags/%E6%91%84%E5%BD%B1/"/>
     
-      <category term="旅行" scheme="http://yoursite.com/tags/%E6%97%85%E8%A1%8C/"/>
+      <category term="旅行" scheme="http://domonji.github.io/tags/%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>星辰大海——青海湖游记</title>
-    <link href="http://yoursite.com/2016/02/12/qinghailake/"/>
-    <id>http://yoursite.com/2016/02/12/qinghailake/</id>
+    <link href="http://domonji.github.io/2016/02/12/qinghailake/"/>
+    <id>http://domonji.github.io/2016/02/12/qinghailake/</id>
     <published>2016-02-12T06:59:51.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -183,25 +183,25 @@
     
     </summary>
     
-      <category term="Photograph" scheme="http://yoursite.com/categories/Photograph/"/>
+      <category term="Photograph" scheme="http://domonji.github.io/categories/Photograph/"/>
     
     
-      <category term="photograph" scheme="http://yoursite.com/tags/photograph/"/>
+      <category term="photograph" scheme="http://domonji.github.io/tags/photograph/"/>
     
-      <category term="travel" scheme="http://yoursite.com/tags/travel/"/>
+      <category term="travel" scheme="http://domonji.github.io/tags/travel/"/>
     
-      <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
+      <category term="摄影" scheme="http://domonji.github.io/tags/%E6%91%84%E5%BD%B1/"/>
     
-      <category term="旅行" scheme="http://yoursite.com/tags/%E6%97%85%E8%A1%8C/"/>
+      <category term="旅行" scheme="http://domonji.github.io/tags/%E6%97%85%E8%A1%8C/"/>
     
-      <category term="青海" scheme="http://yoursite.com/tags/%E9%9D%92%E6%B5%B7/"/>
+      <category term="青海" scheme="http://domonji.github.io/tags/%E9%9D%92%E6%B5%B7/"/>
     
   </entry>
   
   <entry>
     <title>Unity常用工具类之对象池</title>
-    <link href="http://yoursite.com/2016/02/07/unity-objectpool/"/>
-    <id>http://yoursite.com/2016/02/07/unity-objectpool/</id>
+    <link href="http://domonji.github.io/2016/02/07/unity-objectpool/"/>
+    <id>http://domonji.github.io/2016/02/07/unity-objectpool/</id>
     <published>2016-02-07T02:19:32.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -351,17 +351,17 @@
     
     </summary>
     
-      <category term="Unity" scheme="http://yoursite.com/categories/Unity/"/>
+      <category term="Unity" scheme="http://domonji.github.io/categories/Unity/"/>
     
     
-      <category term="unity" scheme="http://yoursite.com/tags/unity/"/>
+      <category term="unity" scheme="http://domonji.github.io/tags/unity/"/>
     
   </entry>
   
   <entry>
     <title>Unity之有限状态机</title>
-    <link href="http://yoursite.com/2016/01/24/unity-statemachine/"/>
-    <id>http://yoursite.com/2016/01/24/unity-statemachine/</id>
+    <link href="http://domonji.github.io/2016/01/24/unity-statemachine/"/>
+    <id>http://domonji.github.io/2016/01/24/unity-statemachine/</id>
     <published>2016-01-24T01:54:18.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -462,19 +462,19 @@
     
     </summary>
     
-      <category term="Unity" scheme="http://yoursite.com/categories/Unity/"/>
+      <category term="Unity" scheme="http://domonji.github.io/categories/Unity/"/>
     
     
-      <category term="unity" scheme="http://yoursite.com/tags/unity/"/>
+      <category term="unity" scheme="http://domonji.github.io/tags/unity/"/>
     
-      <category term="架构" scheme="http://yoursite.com/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://domonji.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>Processing中的随机</title>
-    <link href="http://yoursite.com/2016/01/17/processing-random/"/>
-    <id>http://yoursite.com/2016/01/17/processing-random/</id>
+    <link href="http://domonji.github.io/2016/01/17/processing-random/"/>
+    <id>http://domonji.github.io/2016/01/17/processing-random/</id>
     <published>2016-01-17T11:47:29.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -674,17 +674,17 @@ _拓展：将该地形图的xy值也改成噪声值_
     
     </summary>
     
-      <category term="Processing" scheme="http://yoursite.com/categories/Processing/"/>
+      <category term="Processing" scheme="http://domonji.github.io/categories/Processing/"/>
     
     
-      <category term="Processing" scheme="http://yoursite.com/tags/Processing/"/>
+      <category term="Processing" scheme="http://domonji.github.io/tags/Processing/"/>
     
   </entry>
   
   <entry>
     <title>Unity 单例模式</title>
-    <link href="http://yoursite.com/2016/01/16/unity-singleton/"/>
-    <id>http://yoursite.com/2016/01/16/unity-singleton/</id>
+    <link href="http://domonji.github.io/2016/01/16/unity-singleton/"/>
+    <id>http://domonji.github.io/2016/01/16/unity-singleton/</id>
     <published>2016-01-16T07:07:06.000Z</published>
     <updated>2017-03-13T03:01:26.000Z</updated>
     
@@ -726,12 +726,12 @@ public static T Instance {
     
     </summary>
     
-      <category term="Unity" scheme="http://yoursite.com/categories/Unity/"/>
+      <category term="Unity" scheme="http://domonji.github.io/categories/Unity/"/>
     
     
-      <category term="unity" scheme="http://yoursite.com/tags/unity/"/>
+      <category term="unity" scheme="http://domonji.github.io/tags/unity/"/>
     
-      <category term="架构" scheme="http://yoursite.com/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://domonji.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
