@@ -1,389 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
-  
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://domon.me/2017/03/13/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-      
-        
+      <url>%2F2017%2F03%2F13%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[星辰大海——青海湖游记]]></title>
-      <url>http://domon.me/2016/02/12/qinghailake/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>愿你我可以带着最微薄的行李和最丰盛的自己在世间流浪。<br><a id="more"></a></p>
-</blockquote>
-<p>[dropcap]2[/dropcap]014年的六月，高考结束后的一周，整理书架的时候无意间从最顶层掉出来一本很破旧的杂志，随手翻开，看到一篇关于星空摄影的文章，名字叫欧若拉的裙摆。只觉得很美。</p>
-<p>高中的朋友都很出色，大部分聚集顶尖的学校，在周遭一声声名牌大学的录取报喜中，我无可奈何却又别无选择地咀嚼这一次失败的味道。是这一次旅行让我看到了世界的精彩，让我明白不懂得从一次失败中站起来的人，才是最无可挽回的失败。</p>
-<p>这次旅行期盼了很久，出发前半个月就早早开始做好充足的准备，只为了确保旅途中可以万无一失。中间还有一段小插曲，我爸爸在看到了某个贴吧一篇帖子说环骑青海湖的各种危险后，执意让我取消这次旅行。制定了半个月的计划几乎就要泡汤。最终在我的极力劝说下，和三个人对各项事情的保证后，才挽回了这次旅行。这次西北行在一开始就注定了它的来之不易。<br>落到实处时，计划也是变了又变，从一开始的环骑青海湖后去敦煌，变到骑行青海湖后坐车去茶卡盐湖再去敦煌、张掖丹霞再回兰州。可我仍很贪心，恨不得一口气走完西北。因为外面的世界很大很大。<br>[hr]<br>七月，在两千公里的飞行后抵达西宁。转做大巴来到西海镇，一下车便有好几位车友会的来拉人，态度都很热情。我们租了车后，吃完饭就早早骑车上路了，因为最累人的一段路正等着我们。<br>第一天的路途远比我们想象的要艰难许多，3000米的海拔让人稍一运动就气喘吁吁。连续二十公里的上坡蹬到腿脚发软，公路车变速到最低档都似乎起不到任何作用。两边的视野空旷至极，道路一直延伸到地平线的远方。耳边是呼啸而过的冷风，远处起伏的山峦绵延成诗。在夏日的阳光中蒸腾着一股青草与牛羊的浓烈气味，云层在远山上弥漫出一层淡淡的蓝。道路两旁没有任何可供住宿吃饭的地方，好几日的中饭只能用士力架火腿肠代替。尽管身心已经极度疲惫，大腿内侧抽筋，但我们能做的只有继续前行，不断延伸的道路成了触目惊心的绝望，唯一的动力便是路边的里程碑，还有很多同行的骑友向我们送来的加油声。 五十公里路从中午一点直到傍晚六点半，才在接近湖东种羊场的那个黄昏，看见潮湿的荒原开满了不知名的野花，远方的孤影在苍穹之上久久盘旋之后打翻了一盏夕阳。天边的云快速的逝去，像是被人精心画好又快速擦去的素描。无奈地发现个整段环湖东路上唯一的小镇也只不过是一条道路两边筑起零星平方而已，街道上空无一人，只有我们三人骑行的身影在血红的夕阳下慢慢融成一个个余情未了的小血泡。<br>在一户藏族人家里住了宿，每人25一晚，家里什么都没有，只有三张床，一盏灯，出于安全考虑，我们把自行车推进房间内。</p>
-<p>藏族的人心地善良，之前的担心的确有些多余，他们很热心的为你准备早饭，为你指路，不流利的汉语却流露出他们清澈如水的内心。那里的男人十分俊朗精瘦，大多有着刀削般锋利的面孔，面膛黝黑。那里的女人也十分俊俏，身形瘦削，印堂发黑眼睛却明亮如玉。在街上行走的人都用厚厚的围巾将自己的面孔遮起来。起初以为是封建的习俗，后来才知道是为了抵御高原强烈紫外线。但我们知道的时候已经晚了，脸上手上的皮肤全部晒伤开始脱皮，遇到水时针刺一般的疼痛。只好买了手套和面巾。</p>
-<p>吃了藏族非常地道的手抓羊肉后便回旅店休息。在湖边的镇上过夜，全身上下只觉得酸痛，被冷风吹得鼻涕直流。关上灯后，四周一下变得阒静，夜晚有呼啸的风声和远处藏獒深沉的低吼。那一夜有各种各样杂乱的梦，梦见两个月前在复刻在南方每日一模一样的阴霾和白昼中奋笔疾书的时候，梦见自己的家和亲人从远方飘来的思念与担心。夜里有突如其来的大雨，荒凉的就像远在远方的风。早晨起来睁开眼睛，感觉所有的一切恍若隔世，似乎觉得自己本应该躺在家里的床上舒舒服服地享受空调。但如果不是远行，怎会了解远方每个陌生而又绮丽的生命轨迹，蜗居在城市中的人们过着朝九晚五的生活，总有远方的人做着完全相反的事情。同时他们又在等你，等你以一个过客的身份来到他们的生活。</p>
-<p>[pullquote-left]正真看见青海湖的蓝，是在来到这里的第二日。[/pullquote-left]离开种羊场之后，道路变得好骑起来，一个上午两个小时左右就完成了33公里。下午抵达江西沟之后便在那里住了下来。经过颠簸的路途来到青海湖边，云朵之间洒下凛冽的天光，有壮阔之感。那里的落日要8点40分，我们7点便来到了湖边。那里的海风异常的大，穿了三件衣服和一件羽绒背心的我，仍感觉到鬼嚎般的狂风穿透自己的衣服，一刀刀戳进自己的胸膛。整个人冻得瑟瑟发抖，鼻涕直流。几经想要放弃拍摄日落回去，却还是硬撑了下来。西北的黄昏，比我在高三的教学楼上看见的开阔和壮观的多。在海天连线的地方，耀眼的金色与深沉的蓝色驰骋并进，天地像是巨大的蓝橙渐变镜。天空另一边的一轮满月已清晰可见，与大海夕阳的景色相印成趣。</p>
-<p>[column size=”three-fourth”]<br>[gallery columns=”2” link=”file” size=”large” ids=”264,265,266,268”][/column]<br>[column size=”one-fourth” last=”true”]海风丝毫不减，三脚架在狂风的吹袭下瑟瑟发抖，只好用手将三脚架牢牢固定住，对焦，装上9档中灰密度镜，测光，长曝。风吹得眼睛都睁不开的我，按下了快门，于是才有了第一张照片。我终于体会到，每一张好的作品都被定义了一段艰难的过程。[/column]</p>
-<p>拍完了落日，本期待着更壮阔的青海湖星空，却无奈的发现我们来的这几天正好农历十五前后，而且月亮升起比日落还早。整个天空在月光的映衬下没有几颗星星。只好忍痛放弃了青海湖的星空摄影计划。</p>
-<p>[hr]<br>接下来的几天一帆风顺，我们见到了惨烈阳光下坦荡如砥的大地，金色花海的油菜花田，日落边境的小村庄，充满异族风味的蒙古包和藏獒，地平线处升起的彩虹和鹰，道路两旁高大的白杨，洒满双肩的寥落星辰，寸草不生的蛮荒隔壁， 天地之境般的深邃湖泊和藏族小孩们宝石般的明眸。三个人，骑着车，骑在如梦般广袤的草原上，沿着血红的夕阳下绸缎一般飘向远方的无名溪流深入大地的怀抱，像以梦为马的孩子，枕着流淌着的璀璨星河陷入沉睡。</p>
-<p>几日后，在深夜坐着旧式的白皮火车前往敦煌，轮轨之间轰轰声响源源不断地传来。闷热的空气在车厢内浮躁成难以言表的冲动。过道上睡满了各种拎着大包小包的只买了站票的人。我们为了安全只好将所有行李都自己抱着。在闷热和烟味中沉沉的睡去。醒来时候便是大漠的日出，车窗外是背光轮廓中的胡杨，和隐隐约约可见的另一个我。目及之处落满了荒凉。喧嚣的金黄刺的人睁不开眼，远方的鱼肚白是宁静与热烈的过度，整个世界被分割成了荒凉与深邃。此时此刻，对家的想念愈发浓烈，像是无形之间有一根脐带牢牢得将自己与故乡连接，离开得越远，越能感受到它被拉紧时从内心深出生生拉扯出的不安与焦虑。</p>
-<p>在敦煌小镇的一个夜晚我们终于见到了最明亮的星空。银河薄如蝉翼，像是那条欧若拉的裙摆，在淡紫色的夜空中隐约可见。它便是夜的守护者，见证了一世又一世人们的生老病死。星光从树梢间星星点点般洒下，流淌在我们的双肩，流淌在这大地，流淌在这世间的永恒。四周是夜与大地阒静的告白，散发出一种能够弥漫一生的静谧美感。头顶这一夜的浩瀚星空，我不禁想起了小时候在老家晚上看星星的情景。彼时的我，天真地将自己的所有夙愿都依托于这一夜星辰，静静的听着光阴流过的细碎声响。原以为那样的夜晚会有很多很多，后来才知道，那样的夜晚一辈子也不会有几个。肉眼可见的银河，也仅持续了两个小时就因月亮的升起而黯淡了下去。不禁觉得人生短暂，每个人都像星辰。需要不断燃烧发出自己的光和热才能活得璀璨，才能给自己的生命抹上一道浓墨重彩的回忆。我不是专业摄影师，无法避免小镇路灯灯光的干扰，无法利用后期处理成强大的大片。只能用我最简单的器材，和最微薄的希望，还原那一片梦境般的夜空。没有在视野开阔的青海湖拍到这样的星空，但是我已经很满足。</p>
-<p>关于这趟旅途，我第一次掀开了世界的一角，窥见了它的远近，惊叹那些星光下的睡眠、沿湖的骑行、牛羊、沙漠、胡杨、夕阳与鹰、汗水与欢笑，还有我十八岁的脚步走过的路。</p>
-<p>[gallery link=”file” size=”medium” ids=”263,264,265,266,267,268,269,270,271”]</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Photograph </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> photograph </tag>
-            
-            <tag> travel </tag>
-            
-            <tag> 摄影 </tag>
-            
-            <tag> 旅行 </tag>
-            
-            <tag> 青海 </tag>
-            
-        </tags>
-        
+      <url>%2F2016%2F02%2F12%2Fqinghailake%2F</url>
+      <content type="text"><![CDATA[愿你我可以带着最微薄的行李和最丰盛的自己在世间流浪。 [dropcap]2[/dropcap]014年的六月，高考结束后的一周，整理书架的时候无意间从最顶层掉出来一本很破旧的杂志，随手翻开，看到一篇关于星空摄影的文章，名字叫欧若拉的裙摆。只觉得很美。 高中的朋友都很出色，大部分聚集顶尖的学校，在周遭一声声名牌大学的录取报喜中，我无可奈何却又别无选择地咀嚼这一次失败的味道。是这一次旅行让我看到了世界的精彩，让我明白不懂得从一次失败中站起来的人，才是最无可挽回的失败。 这次旅行期盼了很久，出发前半个月就早早开始做好充足的准备，只为了确保旅途中可以万无一失。中间还有一段小插曲，我爸爸在看到了某个贴吧一篇帖子说环骑青海湖的各种危险后，执意让我取消这次旅行。制定了半个月的计划几乎就要泡汤。最终在我的极力劝说下，和三个人对各项事情的保证后，才挽回了这次旅行。这次西北行在一开始就注定了它的来之不易。落到实处时，计划也是变了又变，从一开始的环骑青海湖后去敦煌，变到骑行青海湖后坐车去茶卡盐湖再去敦煌、张掖丹霞再回兰州。可我仍很贪心，恨不得一口气走完西北。因为外面的世界很大很大。[hr]七月，在两千公里的飞行后抵达西宁。转做大巴来到西海镇，一下车便有好几位车友会的来拉人，态度都很热情。我们租了车后，吃完饭就早早骑车上路了，因为最累人的一段路正等着我们。第一天的路途远比我们想象的要艰难许多，3000米的海拔让人稍一运动就气喘吁吁。连续二十公里的上坡蹬到腿脚发软，公路车变速到最低档都似乎起不到任何作用。两边的视野空旷至极，道路一直延伸到地平线的远方。耳边是呼啸而过的冷风，远处起伏的山峦绵延成诗。在夏日的阳光中蒸腾着一股青草与牛羊的浓烈气味，云层在远山上弥漫出一层淡淡的蓝。道路两旁没有任何可供住宿吃饭的地方，好几日的中饭只能用士力架火腿肠代替。尽管身心已经极度疲惫，大腿内侧抽筋，但我们能做的只有继续前行，不断延伸的道路成了触目惊心的绝望，唯一的动力便是路边的里程碑，还有很多同行的骑友向我们送来的加油声。 五十公里路从中午一点直到傍晚六点半，才在接近湖东种羊场的那个黄昏，看见潮湿的荒原开满了不知名的野花，远方的孤影在苍穹之上久久盘旋之后打翻了一盏夕阳。天边的云快速的逝去，像是被人精心画好又快速擦去的素描。无奈地发现个整段环湖东路上唯一的小镇也只不过是一条道路两边筑起零星平方而已，街道上空无一人，只有我们三人骑行的身影在血红的夕阳下慢慢融成一个个余情未了的小血泡。在一户藏族人家里住了宿，每人25一晚，家里什么都没有，只有三张床，一盏灯，出于安全考虑，我们把自行车推进房间内。 藏族的人心地善良，之前的担心的确有些多余，他们很热心的为你准备早饭，为你指路，不流利的汉语却流露出他们清澈如水的内心。那里的男人十分俊朗精瘦，大多有着刀削般锋利的面孔，面膛黝黑。那里的女人也十分俊俏，身形瘦削，印堂发黑眼睛却明亮如玉。在街上行走的人都用厚厚的围巾将自己的面孔遮起来。起初以为是封建的习俗，后来才知道是为了抵御高原强烈紫外线。但我们知道的时候已经晚了，脸上手上的皮肤全部晒伤开始脱皮，遇到水时针刺一般的疼痛。只好买了手套和面巾。 吃了藏族非常地道的手抓羊肉后便回旅店休息。在湖边的镇上过夜，全身上下只觉得酸痛，被冷风吹得鼻涕直流。关上灯后，四周一下变得阒静，夜晚有呼啸的风声和远处藏獒深沉的低吼。那一夜有各种各样杂乱的梦，梦见两个月前在复刻在南方每日一模一样的阴霾和白昼中奋笔疾书的时候，梦见自己的家和亲人从远方飘来的思念与担心。夜里有突如其来的大雨，荒凉的就像远在远方的风。早晨起来睁开眼睛，感觉所有的一切恍若隔世，似乎觉得自己本应该躺在家里的床上舒舒服服地享受空调。但如果不是远行，怎会了解远方每个陌生而又绮丽的生命轨迹，蜗居在城市中的人们过着朝九晚五的生活，总有远方的人做着完全相反的事情。同时他们又在等你，等你以一个过客的身份来到他们的生活。 [pullquote-left]正真看见青海湖的蓝，是在来到这里的第二日。[/pullquote-left]离开种羊场之后，道路变得好骑起来，一个上午两个小时左右就完成了33公里。下午抵达江西沟之后便在那里住了下来。经过颠簸的路途来到青海湖边，云朵之间洒下凛冽的天光，有壮阔之感。那里的落日要8点40分，我们7点便来到了湖边。那里的海风异常的大，穿了三件衣服和一件羽绒背心的我，仍感觉到鬼嚎般的狂风穿透自己的衣服，一刀刀戳进自己的胸膛。整个人冻得瑟瑟发抖，鼻涕直流。几经想要放弃拍摄日落回去，却还是硬撑了下来。西北的黄昏，比我在高三的教学楼上看见的开阔和壮观的多。在海天连线的地方，耀眼的金色与深沉的蓝色驰骋并进，天地像是巨大的蓝橙渐变镜。天空另一边的一轮满月已清晰可见，与大海夕阳的景色相印成趣。 [column size=”three-fourth”][gallery columns=”2” link=”file” size=”large” ids=”264,265,266,268”][/column][column size=”one-fourth” last=”true”]海风丝毫不减，三脚架在狂风的吹袭下瑟瑟发抖，只好用手将三脚架牢牢固定住，对焦，装上9档中灰密度镜，测光，长曝。风吹得眼睛都睁不开的我，按下了快门，于是才有了第一张照片。我终于体会到，每一张好的作品都被定义了一段艰难的过程。[/column] 拍完了落日，本期待着更壮阔的青海湖星空，却无奈的发现我们来的这几天正好农历十五前后，而且月亮升起比日落还早。整个天空在月光的映衬下没有几颗星星。只好忍痛放弃了青海湖的星空摄影计划。 [hr]接下来的几天一帆风顺，我们见到了惨烈阳光下坦荡如砥的大地，金色花海的油菜花田，日落边境的小村庄，充满异族风味的蒙古包和藏獒，地平线处升起的彩虹和鹰，道路两旁高大的白杨，洒满双肩的寥落星辰，寸草不生的蛮荒隔壁， 天地之境般的深邃湖泊和藏族小孩们宝石般的明眸。三个人，骑着车，骑在如梦般广袤的草原上，沿着血红的夕阳下绸缎一般飘向远方的无名溪流深入大地的怀抱，像以梦为马的孩子，枕着流淌着的璀璨星河陷入沉睡。 几日后，在深夜坐着旧式的白皮火车前往敦煌，轮轨之间轰轰声响源源不断地传来。闷热的空气在车厢内浮躁成难以言表的冲动。过道上睡满了各种拎着大包小包的只买了站票的人。我们为了安全只好将所有行李都自己抱着。在闷热和烟味中沉沉的睡去。醒来时候便是大漠的日出，车窗外是背光轮廓中的胡杨，和隐隐约约可见的另一个我。目及之处落满了荒凉。喧嚣的金黄刺的人睁不开眼，远方的鱼肚白是宁静与热烈的过度，整个世界被分割成了荒凉与深邃。此时此刻，对家的想念愈发浓烈，像是无形之间有一根脐带牢牢得将自己与故乡连接，离开得越远，越能感受到它被拉紧时从内心深出生生拉扯出的不安与焦虑。 在敦煌小镇的一个夜晚我们终于见到了最明亮的星空。银河薄如蝉翼，像是那条欧若拉的裙摆，在淡紫色的夜空中隐约可见。它便是夜的守护者，见证了一世又一世人们的生老病死。星光从树梢间星星点点般洒下，流淌在我们的双肩，流淌在这大地，流淌在这世间的永恒。四周是夜与大地阒静的告白，散发出一种能够弥漫一生的静谧美感。头顶这一夜的浩瀚星空，我不禁想起了小时候在老家晚上看星星的情景。彼时的我，天真地将自己的所有夙愿都依托于这一夜星辰，静静的听着光阴流过的细碎声响。原以为那样的夜晚会有很多很多，后来才知道，那样的夜晚一辈子也不会有几个。肉眼可见的银河，也仅持续了两个小时就因月亮的升起而黯淡了下去。不禁觉得人生短暂，每个人都像星辰。需要不断燃烧发出自己的光和热才能活得璀璨，才能给自己的生命抹上一道浓墨重彩的回忆。我不是专业摄影师，无法避免小镇路灯灯光的干扰，无法利用后期处理成强大的大片。只能用我最简单的器材，和最微薄的希望，还原那一片梦境般的夜空。没有在视野开阔的青海湖拍到这样的星空，但是我已经很满足。 关于这趟旅途，我第一次掀开了世界的一角，窥见了它的远近，惊叹那些星光下的睡眠、沿湖的骑行、牛羊、沙漠、胡杨、夕阳与鹰、汗水与欢笑，还有我十八岁的脚步走过的路。 [gallery link=”file” size=”medium” ids=”263,264,265,266,267,268,269,270,271”]]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[Unity常用工具类之对象池]]></title>
-      <url>http://domon.me/2016/02/07/unity-objectpool/</url>
-      <content type="html"><![CDATA[<p>在游戏开发制作中，我们经常需要动态的<code>Instantiate</code>(实例化)和<code>Destroy</code>(销毁)大量的物体，但是每一次实例化游戏物体都会对系统有很大的开销，占用内存并且造成大量的内存碎片，影响游戏运行效率。尤其是在短时间内进行大量实例化操作，会造成明显的卡顿现象。于是利用对象池来管理游戏物体是游戏开发中必不可少的。</p>
-<a id="more"></a>
-<hr>
-<p><strong>什么是对象池</strong></p>
-<p>对象池，顾名思义，就是用来储存游戏对象的池子。在游戏场景加载的时候，预先实例化出游戏过程中需要用到的对象并隐藏起来。在真正需要用到对象的时候再激活。游戏对象销毁的时候不是直接销毁，而是将其隐藏起来放入对象池中，等到再需要用到的时候不需要再次实例化而直接从对象池中取出将其激活。减少了大量实例化对象的操作。</p>
-<hr>
-<p><strong>具体实现</strong></p>
-<p>首先这是一个工具类，并不需要用到<code>MonoBehavior</code>里的回调和各种方法，所以就不需要继承自它。我们需要用到列表，所以需要引用对应的命名空间：</p>
-<pre><code>using System.Collections.Generic;
-`&lt;/pre&gt;
-
-紧接着我们需要开一些变量。
-
-&lt;pre&gt;`public class ObjectPool{
-    private int m_AllocNum = 0;
-    private GameObject m_BaseGameObj;
-    private List&amp;lt;GameObject&amp;gt; m_IdleList = new List&amp;lt;GameObject&amp;gt; ();
-    private int m_ReAllocNum = 0;
-    private List&amp;lt;GameObject&amp;gt; m_UsingList = new List&amp;lt;GameObject&amp;gt; ();
-}
-`&lt;/pre&gt;
-
-`AllocNum`和`ReAllocNum`代表首次分配的空间(实例化出游戏对象的个数)和对象池内对象不够时重新分配的空间。
-
-`BaseGameObject`即该对象池所储存的对象。
-
-`IdleList`表示在对象池中已经实例化完成处于空闲状态即被隐藏未激活的游戏物体对象列表。`UsingList`是对象池中已被激活在场景中正在使用的游戏物体对象列表。
-
-&lt;pre&gt;`public ObjectPool ()
-    {
-        this.m_BaseGameObj = null;
-        this.m_IdleList.Clear ();
-        this.m_UsingList.Clear ();
-    }
-`&lt;/pre&gt;
-
-构造方法。不用多解释，清空所有列表，置空物体。
-
-&lt;pre&gt;`public void Init (GameObject baseobj, int allocnum, int reallocnum)
-    {
-        this.m_BaseGameObj = baseobj;
-        this.m_AllocNum = allocnum;
-        this.m_ReAllocNum = reallocnum;
-        this.Alloc (this.m_AllocNum);
-    }
-`&lt;/pre&gt;
-
-初始化方法。也不用多解释。
-
-&lt;pre&gt;`public void Alloc (int allocnum)
-    {
-        for (int i = 0; i &amp;lt; allocnum; i++) {
-            GameObject item = UnityEngine.Object.Instantiate (this.m_BaseGameObj, Vector3.zero, Quaternion.identity) as GameObject;
-            item.gameObject.SetActive (false);
-            this.m_IdleList.Add (item);
-        }
-    }
-`&lt;/pre&gt;
-
-分配空间的方法。实例化出指定个数的游戏对象，将其隐藏(实际上不仅是隐藏，是让所有组件和子物体都失效)，并加入到闲置列表中。
-
-&lt;pre&gt;`public GameObject Pop (Vector3 position)
-    {
-        if (this.m_IdleList.Count == 0) {
-            if (this.m_ReAllocNum == 0) {
-                if (this.m_UsingList.Count &amp;gt; 0) {
-                    GameObject obj2 = this.m_UsingList [0];
-                    this.m_IdleList.Add (obj2);
-                    this.m_UsingList.Remove (obj2);
-                } else {
-                //debug
-                }
-            } else {
-                this.Alloc (this.m_ReAllocNum);
-
-            }
-        }
-
-        if (this.m_IdleList.Count &amp;lt;= 0) {
-            return null;
-        }
-
-        GameObject item = this.m_IdleList [0];
-        item.gameObject.SetActive (true);
-        this.m_UsingList.Add (item);
-        this.m_IdleList.Remove (item);
-        item.transform.position = position;
-        Debug.Log (item.name + &amp;quot;poped&amp;quot;);
-        return item;
-    }
-`&lt;/pre&gt;
-
-`Pop`方法。将对象池中的对象取出使用。先判断闲置的对象个数，如果没有闲置的对象，判断指定的重新分配的个数，如果重新分配个数为0，即不重新实例化需要的对象，并且存在正在使用的对象，将正在使用的对象的列表中第一个对象直接激活拿来使用。如果重新分配的个数大于0，则重新实例化一定的对象，取第一个激活使用。如果对象池中有闲置的对象，则取闲置列表中第一个对象激活使用。每次激活使用对象也要将其从闲置列表移到使用列表。
-
-&lt;pre&gt;`public bool Push (GameObject pushobj)
-    {
-        if (this.m_UsingList.Find (x =&amp;gt; x == pushobj)) {
-            pushobj.gameObject.SetActive (false);
-
-            this.m_IdleList.Add (pushobj);
-            this.m_UsingList.Remove (pushobj);
-
-            return true;
-        }
-
-        return false;
-    }
-`&lt;/pre&gt;
-
-`Push`回收不需要的对象。我们不使用到的对象，将其失效。移入闲置列表中。成功返回true。
-
-&lt;pre&gt;`public int GetAllocNum ()
-    {
-        return this.m_AllocNum;
-    }
-
-    public int GetReAllocNum ()
-    {
-        return this.m_ReAllocNum;
-    }
-`&lt;/pre&gt;
-
-两个方法获取到相应的两个字段。
-
-&lt;pre&gt;`public void Clean ()
-    {
-        for (int i = 0; i &amp;lt; this.m_UsingList.Count; i++) {
-            UnityEngine.Object.DestroyImmediate (this.m_UsingList [i]);
-        }
-
-        for (int j = 0; j &amp;lt; this.m_IdleList.Count; j++) {
-            UnityEngine.Object.DestroyImmediate (this.m_IdleList [j]);
-        }
-    }
-</code></pre><p>场景结束的时候清理对象池。将两个列表中的游戏物体对象立即销毁。</p>
-<hr>
-<p><em>最基本的对象池就到此结束了</em></p>
-<p>一般情况下，我们创建一个游戏对象管理器来统一管理游戏中的各类物体。如角色，怪物，粒子，动画，特效等。使用<code>Dictionary&amp;lt;int string or other,ObjectPool&amp;gt;</code>字典形式来存储和引用对象池。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Unity </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> unity </tag>
-            
-        </tags>
-        
+      <url>%2F2016%2F02%2F07%2Funity-objectpool%2F</url>
+      <content type="text"><![CDATA[在游戏开发制作中，我们经常需要动态的Instantiate(实例化)和Destroy(销毁)大量的物体，但是每一次实例化游戏物体都会对系统有很大的开销，占用内存并且造成大量的内存碎片，影响游戏运行效率。尤其是在短时间内进行大量实例化操作，会造成明显的卡顿现象。于是利用对象池来管理游戏物体是游戏开发中必不可少的。 什么是对象池 对象池，顾名思义，就是用来储存游戏对象的池子。在游戏场景加载的时候，预先实例化出游戏过程中需要用到的对象并隐藏起来。在真正需要用到对象的时候再激活。游戏对象销毁的时候不是直接销毁，而是将其隐藏起来放入对象池中，等到再需要用到的时候不需要再次实例化而直接从对象池中取出将其激活。减少了大量实例化对象的操作。 具体实现 首先这是一个工具类，并不需要用到MonoBehavior里的回调和各种方法，所以就不需要继承自它。我们需要用到列表，所以需要引用对应的命名空间： using System.Collections.Generic; `&lt;/pre&gt; 紧接着我们需要开一些变量。 &lt;pre&gt;`public class ObjectPool{ private int m_AllocNum = 0; private GameObject m_BaseGameObj; private List&amp;lt;GameObject&amp;gt; m_IdleList = new List&amp;lt;GameObject&amp;gt; (); private int m_ReAllocNum = 0; private List&amp;lt;GameObject&amp;gt; m_UsingList = new List&amp;lt;GameObject&amp;gt; (); } `&lt;/pre&gt; `AllocNum`和`ReAllocNum`代表首次分配的空间(实例化出游戏对象的个数)和对象池内对象不够时重新分配的空间。 `BaseGameObject`即该对象池所储存的对象。 `IdleList`表示在对象池中已经实例化完成处于空闲状态即被隐藏未激活的游戏物体对象列表。`UsingList`是对象池中已被激活在场景中正在使用的游戏物体对象列表。 &lt;pre&gt;`public ObjectPool () { this.m_BaseGameObj = null; this.m_IdleList.Clear (); this.m_UsingList.Clear (); } `&lt;/pre&gt; 构造方法。不用多解释，清空所有列表，置空物体。 &lt;pre&gt;`public void Init (GameObject baseobj, int allocnum, int reallocnum) { this.m_BaseGameObj = baseobj; this.m_AllocNum = allocnum; this.m_ReAllocNum = reallocnum; this.Alloc (this.m_AllocNum); } `&lt;/pre&gt; 初始化方法。也不用多解释。 &lt;pre&gt;`public void Alloc (int allocnum) { for (int i = 0; i &amp;lt; allocnum; i++) { GameObject item = UnityEngine.Object.Instantiate (this.m_BaseGameObj, Vector3.zero, Quaternion.identity) as GameObject; item.gameObject.SetActive (false); this.m_IdleList.Add (item); } } `&lt;/pre&gt; 分配空间的方法。实例化出指定个数的游戏对象，将其隐藏(实际上不仅是隐藏，是让所有组件和子物体都失效)，并加入到闲置列表中。 &lt;pre&gt;`public GameObject Pop (Vector3 position) { if (this.m_IdleList.Count == 0) { if (this.m_ReAllocNum == 0) { if (this.m_UsingList.Count &amp;gt; 0) { GameObject obj2 = this.m_UsingList [0]; this.m_IdleList.Add (obj2); this.m_UsingList.Remove (obj2); } else { //debug } } else { this.Alloc (this.m_ReAllocNum); } } if (this.m_IdleList.Count &amp;lt;= 0) { return null; } GameObject item = this.m_IdleList [0]; item.gameObject.SetActive (true); this.m_UsingList.Add (item); this.m_IdleList.Remove (item); item.transform.position = position; Debug.Log (item.name + &amp;quot;poped&amp;quot;); return item; } `&lt;/pre&gt; `Pop`方法。将对象池中的对象取出使用。先判断闲置的对象个数，如果没有闲置的对象，判断指定的重新分配的个数，如果重新分配个数为0，即不重新实例化需要的对象，并且存在正在使用的对象，将正在使用的对象的列表中第一个对象直接激活拿来使用。如果重新分配的个数大于0，则重新实例化一定的对象，取第一个激活使用。如果对象池中有闲置的对象，则取闲置列表中第一个对象激活使用。每次激活使用对象也要将其从闲置列表移到使用列表。 &lt;pre&gt;`public bool Push (GameObject pushobj) { if (this.m_UsingList.Find (x =&amp;gt; x == pushobj)) { pushobj.gameObject.SetActive (false); this.m_IdleList.Add (pushobj); this.m_UsingList.Remove (pushobj); return true; } return false; } `&lt;/pre&gt; `Push`回收不需要的对象。我们不使用到的对象，将其失效。移入闲置列表中。成功返回true。 &lt;pre&gt;`public int GetAllocNum () { return this.m_AllocNum; } public int GetReAllocNum () { return this.m_ReAllocNum; } `&lt;/pre&gt; 两个方法获取到相应的两个字段。 &lt;pre&gt;`public void Clean () { for (int i = 0; i &amp;lt; this.m_UsingList.Count; i++) { UnityEngine.Object.DestroyImmediate (this.m_UsingList [i]); } for (int j = 0; j &amp;lt; this.m_IdleList.Count; j++) { UnityEngine.Object.DestroyImmediate (this.m_IdleList [j]); } } 场景结束的时候清理对象池。将两个列表中的游戏物体对象立即销毁。 最基本的对象池就到此结束了 一般情况下，我们创建一个游戏对象管理器来统一管理游戏中的各类物体。如角色，怪物，粒子，动画，特效等。使用Dictionary&amp;lt;int string or other,ObjectPool&amp;gt;字典形式来存储和引用对象池。]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[Unity之有限状态机]]></title>
-      <url>http://domon.me/2016/01/24/unity-statemachine/</url>
-      <content type="html"><![CDATA[<h2 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h2><p>状态机也是游戏中一个非常有用的概念。它可以用于管理游戏不同状态下的逻辑，也可以用于人工智能体的状态机。</p>
-<p>在简单逻辑的情况下，用最基础的枚举变量和<code>switch</code>，<code>case</code>的有限状态机就比较合适。但是这种模式不适合扩展，逻辑一旦复杂起来将会变得非常混乱。<br><a id="more"></a></p>
-<p><em>一种更好的方式是将状态也转变为对象。</em>状态对象拥有自己的属性和方法，这样一来就不用在状态枚举中不断添加枚举，也不需要在用容易混乱的<code>switch</code>，<code>case</code>语句来判断状态，增强程序的维护性和可读性。</p>
-<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><pre><code>public abstract class State : MonoBehaviour 
-{
-    public virtual void Enter ()
-    {
-        AddListeners();
-    }
-
-    public virtual void Exit ()
-    {
-        RemoveListeners();
-    }
-
-    protected virtual void OnDestroy ()
-    {
-        RemoveListeners();
-    }
-
-    protected virtual void AddListeners ()
-    {
-
-    }
-
-    protected virtual void RemoveListeners ()
-    {
-
-    }
-}
-`&lt;/pre&gt;
-将其定义为`abstract` 是为了必须创建具体子类来使用该类。基本用例是`State Machine` 会决定哪个是当前状态（如果存在）——以及在调用`Exit` 和`Enter` 之后会分别切换到哪个状态。然后使用`Enter` 和`Exit` 方法来添加和移除事件监听器。
-
-### StateMachine
-
-&lt;pre&gt;`public class StateMachine : MonoBehaviour 
-{
-    public virtual State CurrentState
-    {
-        get { return _currentState; }
-        set { Transition (value); }
-    }
-    protected State _currentState;
-    protected bool _inTransition;
-
-    public virtual T GetState&amp;lt;T&amp;gt; () where T : State
-    {
-        T target = GetComponent&amp;lt;T&amp;gt;();
-        if (target == null)
-            target = gameObject.AddComponent&amp;lt;T&amp;gt;();
-        return target;
-    }
-
-    public virtual void ChangeState&amp;lt;T&amp;gt; () where T : State
-    {
-        CurrentState = GetState&amp;lt;T&amp;gt;();
-    }
-
-    protected virtual void Transition (State value)
-    {
-        if (_currentState == value || _inTransition)
-            return;
-
-        _inTransition = true;
-
-        if (_currentState != null)
-            _currentState.Exit();
-
-        _currentState = value;
-
-        if (_currentState != null)
-            _currentState.Enter();
-
-        _inTransition = false;
-    }
-}
-</code></pre><p>这个脚本也相当简单。它拿到一个<code>State</code> 实例作为当前状态。该实例是一个叫做 <code>_currentState</code>的保护字段，并且可以通过属性<code>CurrentState</code>来访问。该属性支持赋值和获取两种操作，赋值操作调用<code>Transition</code> 方法有一些其它的逻辑：</p>
-<ol>
-<li>如果设置当前状态传入的值已经是当前状态了，就直接返回（而不是退出当前状态再重新进入）。</li>
-<li>你不能在<code>transition</code>过程中设置状态（例如，不能存在那种调用Exit或Enter方法后导致其它状态变为当前状态的状态）。我选择避免这种问题以防我想在状态改变时抛出事件。否则，在切换状态之前transition过程还未完成这种情况下，会看到抛出很多的事件都把最新创建的事件作为当前事件（而不是每个状态一个事件），这样会导致意想不到的bug。</li>
-<li>标记<code>transition</code>开始。。。</li>
-<li>如果之前状态不为空，通知其退出。</li>
-<li>在<code>setter</code>中将保护字段 <code>_currentState</code>设为传入的状态。</li>
-<li>如果新状态不为空，通知其调用<code>Enter</code>。</li>
-<li>标记<code>transition</code>结束。<br>除此还添加了几个简便的方法。想以很简单的方式通知<code>StateMachine</code>切换状态，根据当前状态的类型调用泛型方法。这样一来，就不用对将切换到的状态实例的引用进行硬编码了。我是通过<code>ChangeState</code> 方法来实现的，约束条件是其泛型参数类型只能是<code>State</code>。在方法内部调用了另外一个泛型方法<code>GetState</code> ，其参数就是泛型类型。<code>GetState</code>方法尝试通过Unity的<code>GetComponent</code> 方法来获取状态，如果获取不到，就调用<code>AddComponent</code>添加。</li>
-</ol>
-<hr>
-<p>以上引用自<a href="http://www.manew.com" target="_blank" rel="external">游戏蛮牛</a><br>原文作者：Jonathan Parham<br>原文链接：<a href="https://theliquidfire.wordpress.com/2015/06/01/tactics-rpg-state-machine/" target="_blank" rel="external">https://theliquidfire.wordpress.com/2015/06/01/tactics-rpg-state-machine/</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Unity </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> unity </tag>
-            
-            <tag> 架构 </tag>
-            
-        </tags>
-        
+      <url>%2F2016%2F01%2F24%2Funity-statemachine%2F</url>
+      <content type="text"><![CDATA[状态机状态机也是游戏中一个非常有用的概念。它可以用于管理游戏不同状态下的逻辑，也可以用于人工智能体的状态机。 在简单逻辑的情况下，用最基础的枚举变量和switch，case的有限状态机就比较合适。但是这种模式不适合扩展，逻辑一旦复杂起来将会变得非常混乱。 一种更好的方式是将状态也转变为对象。状态对象拥有自己的属性和方法，这样一来就不用在状态枚举中不断添加枚举，也不需要在用容易混乱的switch，case语句来判断状态，增强程序的维护性和可读性。 Statepublic abstract class State : MonoBehaviour { public virtual void Enter () { AddListeners(); } public virtual void Exit () { RemoveListeners(); } protected virtual void OnDestroy () { RemoveListeners(); } protected virtual void AddListeners () { } protected virtual void RemoveListeners () { } } `&lt;/pre&gt; 将其定义为`abstract` 是为了必须创建具体子类来使用该类。基本用例是`State Machine` 会决定哪个是当前状态（如果存在）——以及在调用`Exit` 和`Enter` 之后会分别切换到哪个状态。然后使用`Enter` 和`Exit` 方法来添加和移除事件监听器。 ### StateMachine &lt;pre&gt;`public class StateMachine : MonoBehaviour { public virtual State CurrentState { get { return _currentState; } set { Transition (value); } } protected State _currentState; protected bool _inTransition; public virtual T GetState&amp;lt;T&amp;gt; () where T : State { T target = GetComponent&amp;lt;T&amp;gt;(); if (target == null) target = gameObject.AddComponent&amp;lt;T&amp;gt;(); return target; } public virtual void ChangeState&amp;lt;T&amp;gt; () where T : State { CurrentState = GetState&amp;lt;T&amp;gt;(); } protected virtual void Transition (State value) { if (_currentState == value || _inTransition) return; _inTransition = true; if (_currentState != null) _currentState.Exit(); _currentState = value; if (_currentState != null) _currentState.Enter(); _inTransition = false; } } 这个脚本也相当简单。它拿到一个State 实例作为当前状态。该实例是一个叫做 _currentState的保护字段，并且可以通过属性CurrentState来访问。该属性支持赋值和获取两种操作，赋值操作调用Transition 方法有一些其它的逻辑： 如果设置当前状态传入的值已经是当前状态了，就直接返回（而不是退出当前状态再重新进入）。 你不能在transition过程中设置状态（例如，不能存在那种调用Exit或Enter方法后导致其它状态变为当前状态的状态）。我选择避免这种问题以防我想在状态改变时抛出事件。否则，在切换状态之前transition过程还未完成这种情况下，会看到抛出很多的事件都把最新创建的事件作为当前事件（而不是每个状态一个事件），这样会导致意想不到的bug。 标记transition开始。。。 如果之前状态不为空，通知其退出。 在setter中将保护字段 _currentState设为传入的状态。 如果新状态不为空，通知其调用Enter。 标记transition结束。除此还添加了几个简便的方法。想以很简单的方式通知StateMachine切换状态，根据当前状态的类型调用泛型方法。这样一来，就不用对将切换到的状态实例的引用进行硬编码了。我是通过ChangeState 方法来实现的，约束条件是其泛型参数类型只能是State。在方法内部调用了另外一个泛型方法GetState ，其参数就是泛型类型。GetState方法尝试通过Unity的GetComponent 方法来获取状态，如果获取不到，就调用AddComponent添加。 以上引用自游戏蛮牛原文作者：Jonathan Parham原文链接：https://theliquidfire.wordpress.com/2015/06/01/tactics-rpg-state-machine/]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[Unity 单例模式]]></title>
-      <url>http://domon.me/2016/01/16/unity-singleton/</url>
-      <content type="html"><![CDATA[<p>[dropcap]U[/dropcap]<strong>nity单例模式是一个基本的工具类</strong>，在大多数游戏开发中都需要用到。在unity游戏开发过程中很多东西要进行单例化，但是在unity中直接进行单例化是很麻烦的，因为所有的脚本都必须挂载在gameobject上和场景关联起来。一旦场景销毁，脚本也会被清空，所以我们要创建一个单例。让它能够在unity中永久存在。<br><a id="more"></a></p>
-<hr>
-<p><pre class="toolbar-overlay:false decode-attributes:false lang:default decode:true ">public class AllSceneSingleton&lt;T&gt; : MonoBehaviour where T: Component{<br>}</pre><br>&nbsp;</p>
-<p>首先让它成为一个模板，限制类型为<code>Component</code>，保证传进来的都是组件。</p>
-<p><pre class="toolbar-overlay:false decode-attributes:false lang:default decode:true">static T _Instance;<br>public static T Instance {<br>        get {<br>            if (_Instance == null) {<br>                _Instance = FindObjectOfType&lt;T&gt; ();<br>                if (_Instance == null) {<br>                    GameObject obj = new GameObject ();<br>                    obj.hideFlags = HideFlags.HideAndDontSave;<br>                    _Instance = obj.GetComponent&lt;T&gt; () as T;<br>                }<br>            }<br>            return _Instance;<br>        }<br>    }</pre><br>&nbsp;</p>
-<p>接着创建一个静态属性<code>Instance</code>，在变量前加下划线表示这是私有变量，这是一个编程的好习惯。<code>HideFlag</code>这个属性就是告诉unity是如何隐藏自己，<code>HideAndDontSave</code>表示这个gamobject是一个最顶层的，在切换场景的时候不会被删掉，也不会被保存，且被隐藏。</p>
-<hr>
-<p>接下来我们也需要一个Awake函数，让它成为虚函数。</p>
-<p><pre class="toolbar-overlay:false decode-attributes:false lang:default decode:true ">public virtual void Awake ()<br>    {<br>        DontDestroyOnLoad (this.gameObject);<br>        if (_Instance == null) {<br>            _Instance = this as T;<br>        } else {<br>            Destroy (gameObject);<br>        }<br>    }<br></pre><br><code>DontDestroyOnLoad</code>让这个脚本在切换场景的时候不要被删掉。</p>
-<p>在这之后我们首先要判断<code>_Instance</code>是否空，如果空，我们就将this直接复制给他，如果我们在unity单场景的单例情况下，不切换时，当前场景下的gameobject已经是单例，所以直接将这个脚本赋值给它。另外一种情况，不是空的时候，它仍然会调用<code>Awake</code>，所以我们要删除。因为有了<code>DontDestroyOnLoad</code>它就永远不会被删除了，所以我们总要有一个地方删除它，单例不可能永远存在，所以当<code>_Instance</code>不为空，就是已经存在的情况下，把它清除掉。</p>
-<p>我们的unity单例模式就写好了</p>
-<p>## </p>
-<p>有了多场景的单例模式，我们可能也会需要单场景的单例模式。单场景的单例模式就简单一些。</p>
-<p><pre class="toolbar-overlay:false decode-attributes:false lang:default decode:true ">public class SceneSingleton&lt;T&gt; : MonoBehaviour where T :Component<br>{</pre></p>
-<pre><code>static T _Instance;
-public static T Instance {
-    get {
-        if (_Instance == null) {
-            _Instance = FindObjectOfType&amp;lt;T&amp;gt; ();
-            if (_Instance == null) {
-                GameObject obj = new GameObject ();
-                obj.hideFlags = HideFlags.HideAndDontSave;
-                _Instance = obj.GetComponent&amp;lt;T&amp;gt; () as T;
-            }
-        }
-        return _Instance;
-    }
-}
-</code></pre><p>}<br>&nbsp;</p>
-<p>只要保证这个脚本在当前场景下是唯一且被隐藏，在场景切换时不会被保存。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Unity </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> unity </tag>
-            
-            <tag> 架构 </tag>
-            
-        </tags>
-        
+      <url>%2F2016%2F01%2F16%2Funity-singleton%2F</url>
+      <content type="text"><![CDATA[[dropcap]U[/dropcap]nity单例模式是一个基本的工具类，在大多数游戏开发中都需要用到。在unity游戏开发过程中很多东西要进行单例化，但是在unity中直接进行单例化是很麻烦的，因为所有的脚本都必须挂载在gameobject上和场景关联起来。一旦场景销毁，脚本也会被清空，所以我们要创建一个单例。让它能够在unity中永久存在。 public class AllSceneSingleton&lt;T&gt; : MonoBehaviour where T: Component{}&nbsp; 首先让它成为一个模板，限制类型为Component，保证传进来的都是组件。 static T _Instance;public static T Instance { get { if (_Instance == null) { _Instance = FindObjectOfType&lt;T&gt; (); if (_Instance == null) { GameObject obj = new GameObject (); obj.hideFlags = HideFlags.HideAndDontSave; _Instance = obj.GetComponent&lt;T&gt; () as T; } } return _Instance; } }&nbsp; 接着创建一个静态属性Instance，在变量前加下划线表示这是私有变量，这是一个编程的好习惯。HideFlag这个属性就是告诉unity是如何隐藏自己，HideAndDontSave表示这个gamobject是一个最顶层的，在切换场景的时候不会被删掉，也不会被保存，且被隐藏。 接下来我们也需要一个Awake函数，让它成为虚函数。 public virtual void Awake () { DontDestroyOnLoad (this.gameObject); if (_Instance == null) { _Instance = this as T; } else { Destroy (gameObject); } }DontDestroyOnLoad让这个脚本在切换场景的时候不要被删掉。 在这之后我们首先要判断_Instance是否空，如果空，我们就将this直接复制给他，如果我们在unity单场景的单例情况下，不切换时，当前场景下的gameobject已经是单例，所以直接将这个脚本赋值给它。另外一种情况，不是空的时候，它仍然会调用Awake，所以我们要删除。因为有了DontDestroyOnLoad它就永远不会被删除了，所以我们总要有一个地方删除它，单例不可能永远存在，所以当_Instance不为空，就是已经存在的情况下，把它清除掉。 我们的unity单例模式就写好了 ## 有了多场景的单例模式，我们可能也会需要单场景的单例模式。单场景的单例模式就简单一些。 public class SceneSingleton&lt;T&gt; : MonoBehaviour where T :Component{ static T _Instance; public static T Instance { get { if (_Instance == null) { _Instance = FindObjectOfType&amp;lt;T&amp;gt; (); if (_Instance == null) { GameObject obj = new GameObject (); obj.hideFlags = HideFlags.HideAndDontSave; _Instance = obj.GetComponent&amp;lt;T&amp;gt; () as T; } } return _Instance; } } }&nbsp; 只要保证这个脚本在当前场景下是唯一且被隐藏，在场景切换时不会被保存。]]></content>
     </entry>
+
     
   
   
