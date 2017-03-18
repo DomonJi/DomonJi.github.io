@@ -106,12 +106,12 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '6317788844062148000',
-      author: 'Domon'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -2303,8 +2303,6 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
-            <span id="scrollpercent"><span>0</span>%</span>
-          
         </div>
       
 
@@ -2320,7 +2318,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -2424,7 +2422,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"domonji"};
+    var duoshuoQuery = {short_name:"Domon"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
@@ -2722,6 +2720,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
