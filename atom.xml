@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://domon.me/"/>
-  <updated>2017-03-19T02:41:44.000Z</updated>
+  <updated>2017-03-19T08:06:29.000Z</updated>
   <id>https://domon.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://domon.me/2017/03/19/ali-frontend-trainee-interview/"/>
     <id>https://domon.me/2017/03/19/ali-frontend-trainee-interview/</id>
     <published>2017-03-19T02:28:32.000Z</published>
-    <updated>2017-03-19T02:41:44.000Z</updated>
+    <updated>2017-03-19T08:06:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>3月6日上午 10:27 25分钟</p>
 <h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><blockquote>
@@ -41,8 +41,8 @@
 <p>不需要保存调用栈信息，只需要保存调用记录。</p>
 <blockquote>
 <h3 id="遍历数组有哪些方法"><a href="#遍历数组有哪些方法" class="headerlink" title="遍历数组有哪些方法"></a>遍历数组有哪些方法</h3></blockquote>
-<p><code>forEach</code>,<code>map</code>,<code>reduce</code></p>
-<p>其实还有<code>some</code>,<code>every</code>我当时没想起来</p>
+<p><code>forEach</code>,<code>map</code>,<code>reduce</code>,<code>filter</code></p>
+<p>其实还有<code>some</code>,<code>every</code>,<code>reduceRight</code>我当时没想起来</p>
 <blockquote>
 <h3 id="有哪些-HTTP-Methods"><a href="#有哪些-HTTP-Methods" class="headerlink" title="有哪些 HTTP Methods"></a>有哪些 HTTP Methods</h3></blockquote>
 <p><code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DELETE</code>,<code>HEAD</code>,<code>PATCH</code>,<code>OPTION</code></p>
