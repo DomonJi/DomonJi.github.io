@@ -38,9 +38,9 @@ category: Interview
 
 > ### 遍历数组有哪些方法
 
-`forEach`,`map`,`reduce`
+`forEach`,`map`,`reduce`,`filter`
 
-其实还有`some`,`every`我当时没想起来
+其实还有`some`,`every`,`reduceRight`我当时没想起来
 
 > ### 有哪些 HTTP Methods
 
