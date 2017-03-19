@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://domon.me/"/>
-  <updated>2017-03-13T03:01:26.000Z</updated>
+  <updated>2017-03-19T02:31:24.000Z</updated>
   <id>https://domon.me/</id>
   
   <author>
@@ -14,6 +14,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2017阿里前端暑假实习面试经历</title>
+    <link href="https://domon.me/2017/03/19/ali-frontend-trainee-interview/"/>
+    <id>https://domon.me/2017/03/19/ali-frontend-trainee-interview/</id>
+    <published>2017-03-19T02:28:32.000Z</published>
+    <updated>2017-03-19T02:31:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2017阿里前端暑假实习面试经历"><a href="#2017阿里前端暑假实习面试经历" class="headerlink" title="2017阿里前端暑假实习面试经历"></a>2017阿里前端暑假实习面试经历</h1><p>3月6日上午 10:27 25分钟</p>
+<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><blockquote>
+<p>自我介绍</p>
+</blockquote>
+<p>主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目，这一步就是在引导面试官往你熟悉的方向提问。</p>
+<blockquote>
+<p>闭包</p>
+</blockquote>
+<p>是指一个函数能记住并访问它所在的作用域（相关内容具体可以看《你不知道的JavaScript》），闭包产生的原因是函数作用域。</p>
+<blockquote>
+<p>闭包有哪些优缺点</p>
+</blockquote>
+<p>我一开口讲内存泄漏问题，面试官就打断并提问，如果同时有大量请求，每次请求都会调用一个<code>settimeout</code>，此时造成大量闭包内存如何解决，我当时没回答上来……</p>
+<blockquote>
+<p>解释一下尾递归</p>
+</blockquote>
+<p>尾递归指的是函数的最后一次调用是完全调用自身的函数。V8引擎会对尾递归调用作相应的优化。</p>
+<blockquote>
+<p>V8引擎对尾递归调用有什么样的优化</p>
+</blockquote>
+<p>不需要保存调用栈信息，只需要保存调用记录。</p>
+<blockquote>
+<p>遍历数组有哪些方法</p>
+</blockquote>
+<p><code>forEach</code>,<code>map</code>,<code>reduce</code></p>
+<p>其实还有<code>some</code>,<code>every</code>我当时没想起来</p>
+<blockquote>
+<p>有哪些 HTTP Methods</p>
+</blockquote>
+<p><code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DELETE</code>,<code>HEAD</code>,<code>PATCH</code>,<code>OPTION</code></p>
+<p>面试官说还有<code>TRACE</code>，我开始慌了😂</p>
+<blockquote>
+<p>CSS垂直居中的方法</p>
+</blockquote>
+<p>这个问题可以看《CSS揭秘》 绝对定位方法、基于视口单位方法、flexbox方法。</p>
+<blockquote>
+<p>浏览器事件循环</p>
+</blockquote>
+<p>浏览器会把异步操作放入事件队列中，主线程调用栈全部弹空之后会去检查事件队列并把事件队列中需要执行的事件放入主线程调用，如此循环。</p>
+<blockquote>
+<p>Vuejs的特点</p>
+</blockquote>
+<p>组件化, 双向数据绑定, defineProperties数据劫持,Observer and Watcher, 渐进式, Virtual Dom.</p>
+<blockquote>
+<p>XSS CSRF</p>
+</blockquote>
+<p>我就讲了他们的原理，这两个知识点网上应该有很多介绍。</p>
+<blockquote>
+<p>提问环节</p>
+</blockquote>
+<p>阿里这样的大公司会偏向于使用开源的框架还是自己造的轮子？</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>感觉自己回答的还比较轻松，除了上面提到的几个没回答上来的问题。结果还是挂了，学长告知是阿里一个P7级别的主管按照社招标准来面试我的，运气也是有点差。希望再接再厉，查漏补缺，吸取经验教训，为以后的面试做准备吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2017阿里前端暑假实习面试经历&quot;&gt;&lt;a href=&quot;#2017阿里前端暑假实习面试经历&quot; class=&quot;headerlink&quot; title=&quot;2017阿里前端暑假实习面试经历&quot;&gt;&lt;/a&gt;2017阿里前端暑假实习面试经历&lt;/h1&gt;&lt;p&gt;3月6日上午 10:27 2
+    
+    </summary>
+    
+      <category term="Interview" scheme="https://domon.me/categories/Interview/"/>
+    
+    
+      <category term="interview" scheme="https://domon.me/tags/interview/"/>
+    
+      <category term="alibaba" scheme="https://domon.me/tags/alibaba/"/>
+    
+      <category term="frontend" scheme="https://domon.me/tags/frontend/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
