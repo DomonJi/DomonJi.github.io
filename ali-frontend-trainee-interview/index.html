@@ -120,7 +120,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6317788844062148000',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -422,15 +422,17 @@
 
           
             
+            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="ali-frontend-trainee-interview/" itemprop="commentCount"></span>
+                  <span class="post-comments-count hc-comment-count" data-xid="ali-frontend-trainee-interview/" itemprop="commentsCount"></span>
                 </a>
               </span>
+              <!--/noindex-->
             
           
 
@@ -635,24 +637,11 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="ali-frontend-trainee-interview/"
-     data-title="2017阿里前端暑假实习面试经历"
-     data-content=""
-     data-url="https://domon.me/ali-frontend-trainee-interview/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58d2063a17c80129" async = "async" ></script>
 </div>
+
       
     </div>
   </div>
@@ -665,9 +654,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="ali-frontend-trainee-interview/"
-           data-title="2017阿里前端暑假实习面试经历" data-url="https://domon.me/ali-frontend-trainee-interview/">
-      </div>
+      <div id="hypercomments_widget"></div>
     
   </div>
 
@@ -988,37 +975,36 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"Domon"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
-  
-    
-      
-      <script src="../lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="../js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-    
-    <script src="../lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="../js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 88550, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 88550, xid: "ali-frontend-trainee-interview/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/88550/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
 
 
 
