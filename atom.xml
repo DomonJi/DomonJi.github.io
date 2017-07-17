@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://domon.me/"/>
-  <updated>2017-07-17T13:10:19.000Z</updated>
+  <updated>2017-07-17T13:14:35.000Z</updated>
   <id>https://domon.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://domon.me/rxjs-dataflow-in-action/"/>
     <id>https://domon.me/rxjs-dataflow-in-action/</id>
     <published>2017-07-15T13:13:51.000Z</published>
-    <updated>2017-07-17T13:10:19.000Z</updated>
+    <updated>2017-07-17T13:14:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h1><p>目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。</p>
 <h2 id="复杂数据SPA应用的难点"><a href="#复杂数据SPA应用的难点" class="headerlink" title="复杂数据SPA应用的难点"></a>复杂数据SPA应用的难点</h2><h3 id="数据来源多"><a href="#数据来源多" class="headerlink" title="数据来源多"></a>数据来源多</h3><p>DCE的数据主要有以下几个来源：</p>
@@ -43,7 +43,7 @@
 </ol>
 <h3 id="数据更新困难"><a href="#数据更新困难" class="headerlink" title="数据更新困难"></a>数据更新困难</h3><p>缓存是个很好的想法，但是在一个对数据的实时性要求非常高的应用中，缓存很难做的足够好。<br>DCE中几乎所有数据都是会被全局使用到的。比如郭应用列表的数据，不仅要在应用列表中显示，也可能在侧边栏统计应用数量的地方要用到。所以说如果一处数据更新了，另一处没有更新，那就很尴尬了。还有就是数据的依赖关系，如果被依赖的数据改变了，此时也要更新依赖的缓存数据。但是实际上很多时候数据的依赖树太深了，有些依赖关系还不是很明显，结果就会忘记更新缓存。</p>
 <h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>前端开发两大噩梦：状态管理和异步操作，同时以上三个难点也是传统的flux架构难以胜任的原因。Rxjs在这个时候就能很轻而易举的解决这两大困难。</p>
-<h2 id="DCE-的-Rxjs-架构图"><a href="#DCE-的-Rxjs-架构图" class="headerlink" title="DCE 的 Rxjs 架构图"></a>DCE 的 Rxjs 架构图</h2><p><img src="http://ogrzpcmdk.bkt.clouddn.com/WX20170717-210052.png" alt=""></p>
+<h2 id="DCE-的-Rxjs-架构图"><a href="#DCE-的-Rxjs-架构图" class="headerlink" title="DCE 的 Rxjs 架构图"></a>DCE 的 Rxjs 架构图</h2><p><img src="https://user-images.githubusercontent.com/9986655/28269434-ab78161a-6b34-11e7-8533-f531647e8883.png" alt=""></p>
 <p>alpha 为应用所需的顶层数据源，如版本信息，用户信息以及license等，需要这些数据才能进行下一步。<br>socket 为应用与后端数据实时通信的接口，当后端数据有更新时，通过 socket 发送消息给 hub，通知应用更新。<br>hub 为整个应用最主要的 observable ，是数据的分发中心，当收到socket的消息时，会及时的通知右侧底层数据源调用相应的接口获取最新的数据，而右侧规模较大的数据则由这些底层数据源 combinelatest 拼接而成，形成一颗单向流动的数据树。</p>
 <h3 id="Rxjs解决的困难"><a href="#Rxjs解决的困难" class="headerlink" title="Rxjs解决的困难"></a>Rxjs解决的困难</h3><ol>
 <li>统一了异步和同步的逻辑。解决异步问题。</li>
