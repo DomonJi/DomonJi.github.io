@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://domon.me/rxjs-dataflow-in-action/</loc>
+    
+    <lastmod>2017-07-17T13:10:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://domon.me/vue-issues-summarize/</loc>
     
-    <lastmod>2017-07-17T12:27:28.000Z</lastmod>
+    <lastmod>2017-07-17T12:31:59.000Z</lastmod>
     
   </url>
   

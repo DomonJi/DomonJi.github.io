@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://domon.me/"/>
-  <updated>2017-07-17T12:27:28.000Z</updated>
+  <updated>2017-07-17T13:10:19.000Z</updated>
   <id>https://domon.me/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Rxjs 数据流实践</title>
+    <link href="https://domon.me/rxjs-dataflow-in-action/"/>
+    <id>https://domon.me/rxjs-dataflow-in-action/</id>
+    <published>2017-07-15T13:13:51.000Z</published>
+    <updated>2017-07-17T13:10:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h1><p>目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。</p>
+<h2 id="复杂数据SPA应用的难点"><a href="#复杂数据SPA应用的难点" class="headerlink" title="复杂数据SPA应用的难点"></a>复杂数据SPA应用的难点</h2><h3 id="数据来源多"><a href="#数据来源多" class="headerlink" title="数据来源多"></a>数据来源多</h3><p>DCE的数据主要有以下几个来源：</p>
+<ol>
+<li>后端和Docker的API<br> API是数据的主要来源，应用、服务、容器、存储、租户等信息都是通过API获取的。</li>
+<li>Docker API 所使用的 stream<br>stream 也是一个通信协议。Docker使用这个协议来通知容器状态的变化。</li>
+<li>后端的Socker<br>后端通过socket来通知应用等数据的状态的变化。</li>
+<li>localStorage<br>保存用户信息，租户信息等。</li>
+</ol>
+<p>数据来源多导致了两个问题：</p>
+<ol>
+<li>复用处理数据的逻辑比较困难：<br>比如容器列表这个数据。获取的时候我们需要一段代码来格式化容器列表。但是容器列表之后还会更新，由于更新的逻辑和获取的逻辑不一样，所以就很难再复用之前所使用的代码。</li>
+</ol>
+<p>2.获取数据的接口形式不统一：<br>   如今我们调用API时，都会返回一个Promise。但是不是所有的数据来源都能转换成Promise，比如Socket事件，结果就是在获取数据的时候，要先调用API，单后再监听socket事件。结果就是代码的冗余。</p>
+<h3 id="数据复杂"><a href="#数据复杂" class="headerlink" title="数据复杂"></a>数据复杂</h3><p>DCE数据的复杂还体现在三个方面：</p>
+<ol>
+<li>后端获取的数据不能直接展示，要经过一系列复杂逻辑的格式化</li>
+<li>其中部分格式化逻辑还包括发送请求。</li>
+<li>数据之间还存在着复杂的依赖关系。</li>
+</ol>
+<h3 id="数据更新困难"><a href="#数据更新困难" class="headerlink" title="数据更新困难"></a>数据更新困难</h3><p>缓存是个很好的想法，但是在一个对数据的实时性要求非常高的应用中，缓存很难做的足够好。<br>DCE中几乎所有数据都是会被全局使用到的。比如郭应用列表的数据，不仅要在应用列表中显示，也可能在侧边栏统计应用数量的地方要用到。所以说如果一处数据更新了，另一处没有更新，那就很尴尬了。还有就是数据的依赖关系，如果被依赖的数据改变了，此时也要更新依赖的缓存数据。但是实际上很多时候数据的依赖树太深了，有些依赖关系还不是很明显，结果就会忘记更新缓存。</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>前端开发两大噩梦：状态管理和异步操作，同时以上三个难点也是传统的flux架构难以胜任的原因。Rxjs在这个时候就能很轻而易举的解决这两大困难。</p>
+<h2 id="DCE-的-Rxjs-架构图"><a href="#DCE-的-Rxjs-架构图" class="headerlink" title="DCE 的 Rxjs 架构图"></a>DCE 的 Rxjs 架构图</h2><p><img src="http://ogrzpcmdk.bkt.clouddn.com/WX20170717-210052.png" alt=""></p>
+<p>alpha 为应用所需的顶层数据源，如版本信息，用户信息以及license等，需要这些数据才能进行下一步。<br>socket 为应用与后端数据实时通信的接口，当后端数据有更新时，通过 socket 发送消息给 hub，通知应用更新。<br>hub 为整个应用最主要的 observable ，是数据的分发中心，当收到socket的消息时，会及时的通知右侧底层数据源调用相应的接口获取最新的数据，而右侧规模较大的数据则由这些底层数据源 combinelatest 拼接而成，形成一颗单向流动的数据树。</p>
+<h3 id="Rxjs解决的困难"><a href="#Rxjs解决的困难" class="headerlink" title="Rxjs解决的困难"></a>Rxjs解决的困难</h3><ol>
+<li>统一了异步和同步的逻辑。解决异步问题。</li>
+<li>数据推送的机制把拉取的操作变成了推送的操作。解决更新问题。</li>
+<li>BehaviorSubject 可以缓存数据。解决了状态管理的问题。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;遇到的困难&quot;&gt;&lt;a href=&quot;#遇到的困难&quot; class=&quot;headerlink&quot; title=&quot;遇到的困难&quot;&gt;&lt;/a&gt;遇到的困难&lt;/h1&gt;&lt;p&gt;目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和
+    
+    </summary>
+    
+      <category term="Rxjs" scheme="https://domon.me/categories/Rxjs/"/>
+    
+    
+      <category term="frontend" scheme="https://domon.me/tags/frontend/"/>
+    
+      <category term="Rxjs" scheme="https://domon.me/tags/Rxjs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vuejs 踩坑及经验总结</title>
     <link href="https://domon.me/vue-issues-summarize/"/>
     <id>https://domon.me/vue-issues-summarize/</id>
     <published>2017-05-22T12:38:11.000Z</published>
-    <updated>2017-07-17T12:27:28.000Z</updated>
+    <updated>2017-07-17T12:31:59.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="趟坑总结"><a href="#趟坑总结" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 v-for repeat 组件时控制台会出现警告：<br><img src="https://cloud.githubusercontent.com/assets/12231277/26719687/0f18e08c-47b8-11e7-8641-53f4a58679e1.png" alt="image"></p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在组件标签上使用 v-for ：</p>
@@ -28,17 +80,17 @@
 <li>加 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a></li>
 <li>使用 template 标签包裹该组件，再在 template 标签 上使用 v-for。</li>
 </ul>
+<hr>
 <h1 id="趟坑总结-1"><a href="#趟坑总结-1" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue data 属性中定义的变量名如果以 “_” 开头，就不能正确的赋值和渲染</p>
 <h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p><a href="https://github.com/vuejs/vue/issues/2098" target="_blank" rel="external">https://github.com/vuejs/vue/issues/2098</a></p>
-<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>变量名不要以 “_” 开头</p>
-<h1 id="趟坑总结-2"><a href="#趟坑总结-2" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h2><p>在我们的前端组件库 dao-option 组件中 中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，dao-options 选出来的值并不在 dao-select 原本储存的 options 中。<br><img src="https://user-images.githubusercontent.com/19180212/27534266-ff8756b4-5a98-11e7-8c5f-bd9c8b650d7c.png" alt="dao-select-062601"></p>
+<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><h2 id="变量名不要以-“-”-开头"><a href="#变量名不要以-“-”-开头" class="headerlink" title="变量名不要以 “_” 开头"></a>变量名不要以 “_” 开头</h2><h1 id="趟坑总结-2"><a href="#趟坑总结-2" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h2><p>在我们的前端组件库 dao-option 组件中 中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，dao-options 选出来的值并不在 dao-select 原本储存的 options 中。<br><img src="https://user-images.githubusercontent.com/19180212/27534266-ff8756b4-5a98-11e7-8c5f-bd9c8b650d7c.png" alt="dao-select-062601"></p>
 <h2 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h2><p>在组件中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，当 Object 地址改变，:key 中解析值没变时，组件会被复用，并不会被销毁。例如： dao-style 的 dao-select 中 dao-option 因为上述的描述导致组件没被销毁，最终 dao-options 选出来的值不在 dao-select 原本储存的 options 中。</p>
-<h2 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h2><p>:key 绑定复杂类型</p>
-<h1 id="趟坑总结-3"><a href="#趟坑总结-3" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue Router 中定义路由为 a/:id 形式时，从 a/1 跳转到 a/2 时，不会触发 component 的 created 等方法。</p>
+<h2 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h2><h2 id="key-绑定复杂类型"><a href="#key-绑定复杂类型" class="headerlink" title=":key 绑定复杂类型"></a>:key 绑定复杂类型</h2><h1 id="趟坑总结-3"><a href="#趟坑总结-3" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue Router 中定义路由为 a/:id 形式时，从 a/1 跳转到 a/2 时，不会触发 component 的 created 等方法。</p>
 <h2 id="解决方法-3"><a href="#解决方法-3" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.<code>&lt;router-view :key=&quot;$route.path&quot;&gt;&lt;/router-view&gt;</code></p>
 <ol>
 <li>在 component 中监听 $route.path 的变化，手动触发 created 内的方法。<br>P.S. 可以参照 <a href="http://router.vuejs.org/zh-cn/essentials/dynamic-matching.html" target="_blank" rel="external">router-link</a> 中的 响应路由参数的变化</li>
 </ol>
+<hr>
 <h1 id="趟坑总结-4"><a href="#趟坑总结-4" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h2><p>不能直接 watch subscriptions 中的变量，回调不会执行。</p>
 <h2 id="解决方法-4"><a href="#解决方法-4" class="headerlink" title="解决方法"></a>解决方法</h2><p>要先在 data 中注册该变量</p>
 ]]></content>
