@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://domon.me/"/>
-  <updated>2017-03-22T11:36:24.000Z</updated>
+  <updated>2017-07-17T12:19:29.000Z</updated>
   <id>https://domon.me/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="https://domon.me/ali-frontend-trainee-interview/"/>
     <id>https://domon.me/ali-frontend-trainee-interview/</id>
     <published>2017-03-19T02:28:32.000Z</published>
-    <updated>2017-03-22T11:36:24.000Z</updated>
+    <updated>2017-07-17T12:19:29.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://c1.staticflickr.com/3/2881/32743400714_342625c1ce_b.jpg" alt=""></p>
 <p>3月6日上午 10:27 25分钟</p>
 <h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><blockquote>
 <h3 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h3></blockquote>
-<p>主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目，这一步就是在引导面试官往你熟悉的方向提问。</p>
+<p>主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目。</p>
 <a id="more"></a>
 <blockquote>
 <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3></blockquote>
@@ -72,7 +72,7 @@
 &lt;p&gt;3月6日上午 10:27 25分钟&lt;/p&gt;
 &lt;h2 id=&quot;一面&quot;&gt;&lt;a href=&quot;#一面&quot; class=&quot;headerlink&quot; title=&quot;一面&quot;&gt;&lt;/a&gt;一面&lt;/h2&gt;&lt;blockquote&gt;
 &lt;h3 id=&quot;自我介绍&quot;&gt;&lt;a href=&quot;#自我介绍&quot; class=&quot;headerlink&quot; title=&quot;自我介绍&quot;&gt;&lt;/a&gt;自我介绍&lt;/h3&gt;&lt;/blockquote&gt;
-&lt;p&gt;主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目，这一步就是在引导面试官往你熟悉的方向提问。&lt;/p&gt;
+&lt;p&gt;主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目。&lt;/p&gt;
     
     </summary>
     
@@ -92,7 +92,7 @@
     <link href="https://domon.me/hello-world/"/>
     <id>https://domon.me/hello-world/</id>
     <published>2017-03-13T03:01:26.000Z</published>
-    <updated>2017-03-13T03:01:26.000Z</updated>
+    <updated>2017-03-23T08:01:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
