@@ -330,6 +330,221 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://domon.mevue-issues-summarize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Domon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avator.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Domon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="vue-issues-summarize/" itemprop="url">
+                  vuejs 踩坑及经验总结
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T20:38:11+08:00">
+                2017-05-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-17T20:27:28+08:00">
+                2017-07-17
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/vuejs/" itemprop="url" rel="index">
+                    <span itemprop="name">vuejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="vue-issues-summarize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="vue-issues-summarize/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  436
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="趟坑总结"><a href="#趟坑总结" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 v-for repeat 组件时控制台会出现警告：<br><img src="https://cloud.githubusercontent.com/assets/12231277/26719687/0f18e08c-47b8-11e7-8641-53f4a58679e1.png" alt="image"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在组件标签上使用 v-for ：</p>
+<ul>
+<li>加 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a></li>
+<li>使用 template 标签包裹该组件，再在 template 标签 上使用 v-for。</li>
+</ul>
+<h1 id="趟坑总结-1"><a href="#趟坑总结-1" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue data 属性中定义的变量名如果以 “_” 开头，就不能正确的赋值和渲染</p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p><a href="https://github.com/vuejs/vue/issues/2098" target="_blank" rel="external">https://github.com/vuejs/vue/issues/2098</a></p>
+<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>变量名不要以 “_” 开头</p>
+<h1 id="趟坑总结-2"><a href="#趟坑总结-2" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h2><p>在我们的前端组件库 dao-option 组件中 中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，dao-options 选出来的值并不在 dao-select 原本储存的 options 中。<br><img src="https://user-images.githubusercontent.com/19180212/27534266-ff8756b4-5a98-11e7-8c5f-bd9c8b650d7c.png" alt="dao-select-062601"></p>
+<h2 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h2><p>在组件中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，当 Object 地址改变，:key 中解析值没变时，组件会被复用，并不会被销毁。例如： dao-style 的 dao-select 中 dao-option 因为上述的描述导致组件没被销毁，最终 dao-options 选出来的值不在 dao-select 原本储存的 options 中。</p>
+<h2 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h2><p>:key 绑定复杂类型</p>
+<h1 id="趟坑总结-3"><a href="#趟坑总结-3" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue Router 中定义路由为 a/:id 形式时，从 a/1 跳转到 a/2 时，不会触发 component 的 created 等方法。</p>
+<h2 id="解决方法-3"><a href="#解决方法-3" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.<code>&lt;router-view :key=&quot;$route.path&quot;&gt;&lt;/router-view&gt;</code></p>
+<ol>
+<li>在 component 中监听 $route.path 的变化，手动触发 created 内的方法。<br>P.S. 可以参照 <a href="http://router.vuejs.org/zh-cn/essentials/dynamic-matching.html" target="_blank" rel="external">router-link</a> 中的 响应路由参数的变化</li>
+</ol>
+<h1 id="趟坑总结-4"><a href="#趟坑总结-4" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h2><p>不能直接 watch subscriptions 中的变量，回调不会执行。</p>
+<h2 id="解决方法-4"><a href="#解决方法-4" class="headerlink" title="解决方法"></a>解决方法</h2><p>要先在 data 中注册该变量</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://domon.meali-frontend-trainee-interview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -750,7 +965,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -761,7 +976,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -772,7 +987,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
