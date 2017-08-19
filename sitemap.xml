@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://domon.me/how-to-use-rxjs-gracefully/</loc>
+    
+    <lastmod>2017-08-19T04:30:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://domon.me/rxjs-dataflow-in-action/</loc>
     
     <lastmod>2017-08-19T04:17:24.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://domon.me/vue-issues-summarize/</loc>
     
     <lastmod>2017-08-19T04:16:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://domon.me/how-to-use-rxjs-elegantly/</loc>
-    
-    <lastmod>2017-08-19T04:14:34.000Z</lastmod>
     
   </url>
   
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://domon.me/categories/index.html</loc>
+    <loc>https://domon.me/about/index.html</loc>
     
     <lastmod>2017-03-23T08:01:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://domon.me/about/index.html</loc>
+    <loc>https://domon.me/categories/index.html</loc>
     
     <lastmod>2017-03-23T08:01:38.000Z</lastmod>
     
