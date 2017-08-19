@@ -330,6 +330,260 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://domon.mehow-to-use-rxjs-elegantly/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Domon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avator.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Domon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="how-to-use-rxjs-elegantly/" itemprop="url">
+                  如何更优雅地使用 Rxjs
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T14:32:13+08:00">
+                2017-08-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-19T12:14:34+08:00">
+                2017-08-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/rxjs/" itemprop="url" rel="index">
+                    <span itemprop="name">rxjs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="how-to-use-rxjs-elegantly/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="how-to-use-rxjs-elegantly/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,573
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。</p>
+<p>我找了几处经典的案例，看看我们如何更优雅地使用 Rxjs 。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例 1"></a>案例 1</h3><p>我们先来看一处简单的案例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">userInfo$.subscribe(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</div><div class="line">  settingApi.getAccessKeys(v.name)</div><div class="line">    .then(<span class="function"><span class="params">accessKeys</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.accessKeys = accessKeys;</div><div class="line">      <span class="keyword">this</span>.updateRemoteBuildCommand(<span class="keyword">this</span>.rules.remoteBuildConfig);</div><div class="line">      <span class="keyword">this</span>.updateWebhook();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样的代码在项目中很常见，乍一看似乎没有什么问题，但我认为暗藏玄机：</p>
+<ol>
+<li><code>Promise</code> 和 <code>Observable</code> 混用，造成代码可读性低。</li>
+<li>在 <code>subscribe</code> 中发起请求之后修改本地数据，此处操作相当于 <code>mergeMap</code>，这样一来就会有一个问题，先发出的请求由于网络延迟返回的比后发出的请求返回的还慢，这样子当先发出的请求到达了之后就用旧的数据把新的数据覆盖，造成不可预期的后果。</li>
+</ol>
+<p>经过一番重构，我认为这样子会更加优雅：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">userInfo$</div><div class="line">  .pluck(<span class="string">'name'</span>)</div><div class="line">  .switchMap(settingApi.getAccessKeys)</div><div class="line">  .subscribe(<span class="function"><span class="params">accessKeys</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.accessKeys = accessKeys;</div><div class="line">    <span class="keyword">this</span>.updateRemoteBuildCommand(<span class="keyword">this</span>.rules.remoteBuildConfig);</div><div class="line">    <span class="keyword">this</span>.updateWebhook();</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+<p>使用 <code>switchMap</code> 便解决了上述两个问题。关于 ‘switchMap’ 以及各种 map的区别，请看：<br><a href="http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-mergeMap" target="_blank" rel="external">mergeMap</a><br><a href="http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-concatMap" target="_blank" rel="external">concatMap</a><br><a href="http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-switchMap" target="_blank" rel="external">switchMap</a><br><a href="http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-exhaustMap" target="_blank" rel="external">exhaustMap</a></p>
+<p>这段代码第三行等价于：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.switchMap(<span class="function"><span class="params">name</span> =&gt;</span> Rx.Observable.fromPromise(settingApi.getAccessKeys(name)))</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="案例-2"><a href="#案例-2" class="headerlink" title="案例 2"></a>案例 2</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">appApi.create(params)</div><div class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">switch</span> (res.status) &#123;</div><div class="line">      <span class="keyword">case</span> <span class="number">201</span>:</div><div class="line">        <span class="comment">// 应用详情的数据是从列表数据中获取的,</span></div><div class="line">        <span class="comment">// 而列表数据依赖整个 Stream 系统,</span></div><div class="line">        <span class="comment">// 因此这里只需要等待列表更新然后再跳转即可。</span></div><div class="line">        hub.hub$$.next(<span class="string">'app'</span>);</div><div class="line">        appsVm$$.subscribe(<span class="function"><span class="params">apps</span> =&gt;</span> &#123;</div><div class="line">          <span class="keyword">if</span> (_.find(apps, &#123; <span class="attr">name</span>: <span class="keyword">this</span>.appName &#125;)) &#123;</div><div class="line">            <span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>: <span class="string">'AppDetail'</span>, <span class="attr">params</span>: &#123; <span class="attr">name</span>: <span class="keyword">this</span>.appName &#125; &#125;);</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line"></div><div class="line">      <span class="keyword">case</span> <span class="number">207</span>:</div><div class="line">        res.data.Errors.forEach(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">          <span class="keyword">new</span> Noty(&#123;</div><div class="line">            <span class="attr">text</span>: err,</div><div class="line">            <span class="attr">type</span>: <span class="string">'error'</span>,</div><div class="line">          &#125;).show();</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line"></div><div class="line">      <span class="keyword">default</span>:</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<p>此处代码来自 <code>new-from-registry.js</code></p>
+<p>可以看到，这段代码的目的是发起一个创建应用的请求，成功后去订阅 <code>appsVm$$</code> 等到应用列表中确实存在新建的应用便跳转到应用详情页中。<br>这段代码有两个问题：</p>
+<ol>
+<li><code>Promise</code> 和 <code>Observable</code> 混用，造成代码可读性低。</li>
+<li>在请求成功后订阅了 <code>appsVm$$</code> ，却并没有任何地方去取消这个订阅，也就导致了一个非常严重的bug，即创建应用后，在容器组列表中点击刷新按钮也会跳转到应用详情页中，因为执行了 <code>hub.hub$$.next(&#39;pod&#39;)</code>。</li>
+</ol>
+<p>经过重构一番之后，我认为合理并且优雅的代码应该如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> [succeed$, error$] = Rx.Observable.fromPromise(appApi.create(params))</div><div class="line">                             .partition(<span class="function"><span class="params">res</span> =&gt;</span> res.status === <span class="number">201</span>);</div><div class="line"></div><div class="line">  succeed$.<span class="keyword">do</span>(<span class="function"><span class="params">()</span> =&gt;</span> hub.hub$$.next(<span class="string">'app'</span>))</div><div class="line">    .concatMapTo(appsVm$$)</div><div class="line">    .first(<span class="function"><span class="params">apps</span> =&gt;</span> _.some(apps, app =&gt; app.name === <span class="keyword">this</span>.appName))</div><div class="line">    .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>: <span class="string">'AppDetail'</span>, <span class="attr">params</span>: &#123; <span class="attr">name</span>: <span class="keyword">this</span>.appName &#125; &#125;);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">  error$.subscribe(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">    res.data.Errors.forEach(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">new</span> Noty(&#123;</div><div class="line">        <span class="attr">text</span>: err,</div><div class="line">        <span class="attr">type</span>: <span class="string">'error'</span>,</div><div class="line">      &#125;).show();</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<p>将 <code>Promise</code> 转化为 <code>Observable</code> ，通过 <code>partition</code> 将其分为成功和错误的两条流。<br>我们关注成功的这个 <code>Observable</code>，在 <code>do</code> 中做副作用，之后将其映射为 <code>appsVm$$</code>，取第一个符合条件的数据对其订阅。这边 <code>first</code> 操作符会在得到第一个符合的数据之后立刻发出 <code>complete</code>，订阅也随即停止。</p>
+<p>关于 <code>partition</code>： <a href="http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-partition" target="_blank" rel="external">partition</a></p>
+<hr>
+<h3 id="案例-3"><a href="#案例-3" class="headerlink" title="案例 3"></a>案例 3</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">networkApi.create(params, params.nodeAddress, tenant, userName)</div><div class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> networksNumber = <span class="keyword">this</span>.networks.all.length;</div><div class="line">    <span class="keyword">const</span> interval = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      hub.hub$$.next(<span class="string">'network'</span>);</div><div class="line">    &#125;, <span class="number">2000</span>);</div><div class="line">    <span class="keyword">const</span> temp_ = networksVm$$.subscribe(<span class="function"><span class="params">networks</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">if</span> (networks.all.length &gt; networksNumber) &#123;</div><div class="line">        <span class="keyword">new</span> Noty(&#123;</div><div class="line">          <span class="attr">text</span>: <span class="string">'网络创建成功。'</span>,</div><div class="line">          <span class="attr">type</span>: <span class="string">'success'</span>,</div><div class="line">        &#125;).show();</div><div class="line">        <span class="comment">// 把参数恢复到默认</span></div><div class="line">        <span class="keyword">this</span>.data = _.clone(DEFAULT);</div><div class="line">        <span class="keyword">this</span>.isShow = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">this</span>.creating = <span class="literal">false</span>;</div><div class="line">        temp_.unsubscribe();</div><div class="line">        clearInterval(interval);</div><div class="line">        <span class="keyword">this</span>.$router.push(&#123;</div><div class="line">          <span class="attr">path</span>: <span class="string">`/network-detail/<span class="subst">$&#123;res.Id&#125;</span>`</span>,</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="params">rej</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.creating = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">new</span> Noty(&#123;</div><div class="line">      <span class="attr">text</span>: <span class="string">`网络 <span class="subst">$&#123;<span class="keyword">this</span>.data.name&#125;</span> 创建失败，请重试！&lt;br&gt;错误信息：<span class="subst">$&#123;rej.data.message&#125;</span>`</span>,</div><div class="line">      <span class="attr">type</span>: <span class="string">'error'</span>,</div><div class="line">    &#125;).show();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
+<p>这段代码来自 <code>create-network.js</code></p>
+<p>它的目的是请求成功后不断地去轮询，直到网络真的创建成功，再跳转路由。<br>这段代码同时存在以下几个问题：</p>
+<ol>
+<li><code>Promise</code> 和 <code>Observable</code> 混用，造成代码可读性低。</li>
+<li>同时还有 <code>setInterval</code>混入。</li>
+<li>自己手动的取消 Interval 和取消订阅，造成了不必要的麻烦和代码冗余。</li>
+</ol>
+<p>这段逻辑使用Rxjs重构的难点便是在这个轮询上。于是考虑使用 <code>Observable.interval</code> 来构造一个定时产生数据的 <code>Observable</code>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Rx.Observable</div><div class="line">  .fromPromise(networkApi.create(params, params.nodeAddress, tenant, userName))</div><div class="line">  .concatMap(<span class="function"><span class="params">res</span> =&gt;</span> Rx.Observable.interval(<span class="number">1000</span>).mapTo(res))</div><div class="line">  .do(<span class="function"><span class="params">()</span> =&gt;</span> hub.hub$$.next(<span class="string">'network'</span>))</div><div class="line">  .combineLatest(networksVm$$)</div><div class="line">  .first(<span class="function">(<span class="params">[res, networks]</span>) =&gt;</span> _.some(networks.all, network =&gt; network.id === res.Id))</div><div class="line">  .subscribe(<span class="keyword">this</span>.onSuccess, <span class="keyword">this</span>.onError);</div></pre></td></tr></table></figure></p>
+<p>将 <code>Promise</code> 得到的结果映射为每隔1秒发送一遍的 <code>Observable</code>，在 <code>do</code>中做 <code>hub.hub$$.next(&#39;network&#39;)</code>，同时结合 <code>networksVm$$</code>，订阅第一个符合条件（也就是网络成功被创建）的数据，展示创建成功的信息，在异常的时候调用<code>onError</code>展示错误信息。这边把成功和失败的信息展示抽离出来成为单独的方法。</p>
+<hr>
+<h3 id="案例-4"><a href="#案例-4" class="headerlink" title="案例 4"></a>案例 4</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">nodeApi.removeK8s(node).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">  nodeApi.down(node)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">const</span> promise = nodeApi.detail(node.id)</div><div class="line">        .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">          <span class="keyword">if</span> (res.Status.State === <span class="string">'down'</span>) &#123;</div><div class="line">            clearInterval(timer);</div><div class="line">            <span class="keyword">return</span> nodeApi.remove(node)</div><div class="line">              .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">                hub.hub$$.next(<span class="string">'all'</span>);</div><div class="line">                <span class="keyword">new</span> Noty(&#123;</div><div class="line">                  <span class="attr">text</span>: <span class="string">'成功删除主机'</span>,</div><div class="line">                  <span class="attr">type</span>: <span class="string">'success'</span>,</div><div class="line">                &#125;).show();</div><div class="line">              &#125;);</div><div class="line">          &#125;</div><div class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;);</div><div class="line">      <span class="keyword">return</span> promise;</div><div class="line">    &#125;, <span class="number">3</span> * <span class="number">1000</span>);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="params">rej</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">new</span> Noty(&#123;</div><div class="line">      <span class="attr">text</span>: <span class="string">`删除主机失败，错误信息: <span class="subst">$&#123;rej.data.message&#125;</span>`</span>,</div><div class="line">      <span class="attr">type</span>: <span class="string">'error'</span>,</div><div class="line">    &#125;).show();</div><div class="line">  &#125;);</div><div class="line">&#125;).catch(<span class="function"><span class="params">rej</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">new</span> Noty(&#123;</div><div class="line">    <span class="attr">text</span>: <span class="string">`删除主机失败，错误信息: <span class="subst">$&#123;rej.data.message&#125;</span>`</span>,</div><div class="line">    <span class="attr">type</span>: <span class="string">'error'</span>,</div><div class="line">  &#125;).show();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这段代码已经是惨不忍睹，嵌套了4层<code>then</code>加一层<code>setInterval</code>。<br>它的目的是，发送两个请求之后去轮询主机详情，直到状态为 down 时再发起请求移除这个主机节点，之后提示成功或者失败的消息。</p>
+<p>首先我们可以用 <code>Promise.all</code> 把连续的两个 <code>Promise</code>合并<br>再转换为每隔3秒轮询一次的 <code>Observable</code><br>取第一个状态为 <code>down</code> 的数据，调用api移除这个节点，<br>然后通知 hub，最后订阅这个流，输出成功和错误的提示消息。</p>
+<p>重构后的代码如下。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Observable.fromPromise(<span class="built_in">Promise</span>.all([</div><div class="line">  nodeApi.removeK8s(node),</div><div class="line">  nodeApi.down(node),</div><div class="line">]))</div><div class="line">  .concatMapTo(Observable.interval(<span class="number">3000</span>))</div><div class="line">  .switchMap(<span class="function"><span class="params">()</span> =&gt;</span> nodeApi.detail(node.id))</div><div class="line">  .first(<span class="function"><span class="params">res</span> =&gt;</span> res.Status.State === <span class="string">'down'</span>)</div><div class="line">  .switchMap(<span class="function"><span class="params">()</span> =&gt;</span> nodeApi.remove(node))</div><div class="line">  .do(<span class="function"><span class="params">()</span> =&gt;</span> hub.hub$$.next(<span class="string">'all'</span>))</div><div class="line">  .subscribe(successNoty, errorNoty);</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="案例-5"><a href="#案例-5" class="headerlink" title="案例 5"></a>案例 5</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">socket$$.subscribe(<span class="function"><span class="params">job</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// 因为 job 推送来的数据并不是 build 的数据</span></div><div class="line">  <span class="comment">// 所以我还得根据 jobId 查到具体的 build 的数据</span></div><div class="line">  <span class="comment">// 索性每次拿到 job 就重新拿列表</span></div><div class="line">  <span class="keyword">if</span> (!job) <span class="keyword">return</span>;</div><div class="line">  <span class="keyword">const</span> tempName = <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.repo.namespace.name&#125;</span>/<span class="subst">$&#123;<span class="keyword">this</span>.repo.name&#125;</span>`</span>;</div><div class="line">  <span class="keyword">if</span> (job.entity.name === tempName) &#123;</div><div class="line">    <span class="keyword">const</span> getRepoBuildsPromise = <span class="keyword">this</span>.getRepoBuilds();</div><div class="line">    <span class="keyword">if</span> (job.state.type === <span class="string">'Succeed'</span>) &#123;</div><div class="line">      getRepoBuildsPromise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.builds.length) &#123;</div><div class="line">          <span class="keyword">this</span>.updateTagList(<span class="keyword">this</span>.builds[<span class="number">0</span>].ImageTag);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这段代码也是我们的项目中很常见的，把所有的逻辑都放在 <code>subscribe</code> 中，<br>这样就让 <code>subscribe</code> 中逻辑很臃肿。</p>
+<p>我们先来看一下这段代码的逻辑：<br>订阅了<code>socket$$</code>，当 <code>job.entity.name === tempName</code> 时去调用 <code>this.getRepoBuilds</code>这个函数，这个函数里发起了一个请求之后修改了本地数据（实际上这样的函数很不纯，我觉得不应该在这个函数里修改本地数据），并返回一个 <code>Promise</code>，如果 <code>job.state.type === &#39;Succeed&#39;</code>，那么在这个 <code>Promise</code> resolve 之后去修改本地数据。</p>
+<p>这段代码的难点就在于如何等到这个 <code>Promise</code> resolve 之后再去修改本地数据。<br>实际上Rx是很强大的，你能想到的任何对流的操作几乎都有对应的方法，比如这个例子，我们就可以使用 <code>delayWhen</code>这个操作符。它接收的是一个方法。</p>
+<p>重构之后的代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">socket$$</div><div class="line">  .filter(<span class="function"><span class="params">job</span> =&gt;</span> job &amp;&amp; job.entity.name === tempName)</div><div class="line">  .delayWhen(<span class="keyword">this</span>.getRepoBuilds)</div><div class="line">  .filter(<span class="function"><span class="params">job</span> =&gt;</span> job.state.type === <span class="string">'Succeed'</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.builds.length) &#123;</div><div class="line">      <span class="keyword">this</span>.updateTagList(<span class="keyword">this</span>.builds[<span class="number">0</span>].ImageTag);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+<p>上面第三行代码等价于：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.delayWhen(<span class="function"><span class="params">()</span> =&gt;</span> Rx.Observable.fromPromise(<span class="keyword">this</span>.getRepoBuilds()))</div></pre></td></tr></table></figure></p>
+<p>关于 <code>delayWhen</code>： <a href="http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-delayWhen" target="_blank" rel="external">delayWhen</a></p>
+<hr>
+<h3 id="还有一点更重要的"><a href="#还有一点更重要的" class="headerlink" title="还有一点更重要的"></a>还有一点更重要的</h3><p>我们DCE代码中很多地方，比如创建镜像，都会给某个按钮点击事件绑定一个方法，在这个方法里面去<code>subscribe</code>一个流，然后去做一些操作，我觉得这样是不合理的，因为如果没有对点击加以限制，用户不断的点击，就会不断的去<code>subcribe</code>，会引起一些不可预料的结果，甚至引起性能问题，尤其是在一些点击之后需要轮询操作的地方。实际上我们应该在点击的时候做 <code>next</code> 操作而不是 <code>subcribe</code>操作。</p>
+<p><strong>所以上面所有案例的重构并没有解决根本的问题！</strong><br>我认为所有流的订阅都应该放在组件初始化的时候，组件的方法只对流做 <code>next</code> 操作和修改本地数据。</p>
+<p>比如对于一个点击事件，更合理的做法是利用 <code>vue-rx</code>的一个指令 <code>v-stream:click</code> 把点击事件转换成一个流，与你需要订阅的流合并，在组件<code>mounted</code>的时候去<code>subcribe</code>这个点击事件的流。举例如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;button v-stream:click="&#123; subject: click$, data: someData &#125;"&gt;&lt;/button&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">import someApi from '...somePath'</div><div class="line">import someStream$$ from '...somePath'</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  data() &#123;</div><div class="line">    return &#123;</div><div class="line">      someData: 'someData',</div><div class="line">    &#125;;</div><div class="line">  &#125;,</div><div class="line">  subscriptions() &#123;</div><div class="line">    this.click$ = new Rx.Subject();</div><div class="line">  &#125;,</div><div class="line">  mounted() &#123;</div><div class="line">    this.$subscribeTo(</div><div class="line">      this.click$.switchMap(someApi.someMethod)</div><div class="line">        .concatMapTo(Rx.Observable.interval(1000))</div><div class="line">        .combineLatest(someStream$$)</div><div class="line">        .first(/** some logic */),</div><div class="line">      onNext, onError, OnComplete,</div><div class="line">    );</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p>值得注意的是：<code>vue-rx</code> 中提供了一个 <code>$subscribeTo</code>方法，可以自动的在组件销毁时 <code>unsubscribe</code> 所有的订阅，很多情况下可以代替 <code>subscribe</code>方法。</p>
+<p>于是我们可以给 <code>Observable</code> 的原型链上添加一个方法，便于我们链式调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 给 Observable 添加的方法</span></div><div class="line"><span class="comment">// 在 Vue 实例中使用 observable.$subscribeTo(this, onNext, onError, onComplete)</span></div><div class="line"><span class="comment">// 等价于使用 this.$subscribeTo(observable, onNext, onError, onComplete)</span></div><div class="line">Rx.Observable.prototype.$subscribeTo = <span class="function"><span class="keyword">function</span> <span class="title">$subscribeTo</span>(<span class="params">_vm, onNext, onError, onComplete</span>) </span>&#123;</div><div class="line">  Vue.prototype.$subscribeTo.call(_vm, <span class="keyword">this</span>, onNext, onError, onComplete);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述 <code>mounted</code> 函数便可更加简洁：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mounted() &#123;</div><div class="line">  <span class="keyword">this</span>.click$.switchMap(someApi.someMethod)</div><div class="line">    .concatMapTo(Rx.Observable.interval(<span class="number">1000</span>))</div><div class="line">    .combineLatest(someStream$$)</div><div class="line">    .first(<span class="comment">/** some logic */</span>)</div><div class="line">    .$subscribeTo(<span class="keyword">this</span>, onNext, onError, onComplete);</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>现在我们项目中对 <code>vue-rx</code> 的使用还只停留在给vue实例上加一个subscriptions对象，实际上 <code>vue-rx</code>还提供了很多很便利的方法和指令：<br><code>$watchAsObservable</code>可以观察一个<code>data</code>数据产生一个流。<br><code>$createObservableMethod</code>可以创建一个流，在一个方法每次调用的时候发出它的参数。<br><code>v-stream:click</code>可以从一个点击事件上创建一个流，每次点击可以发出你想要发出的数据。<br>还有<code>$eventToObservable</code>、<code>$fromDomEvent</code>等，大家可以参阅 <a href="https://github.com/vuejs/vue-rx/blob/master/README-CN.md" target="_blank" rel="external">vue-rx 文档</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://domon.merxjs-dataflow-in-action/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -385,8 +639,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-17T21:14:35+08:00">
-                2017-07-17
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-19T12:17:24+08:00">
+                2017-08-19
               </time>
             
           </span>
@@ -482,37 +736,14 @@
 
       
         
-          
-            <h1 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h1><p>目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。</p>
-<h2 id="复杂数据SPA应用的难点"><a href="#复杂数据SPA应用的难点" class="headerlink" title="复杂数据SPA应用的难点"></a>复杂数据SPA应用的难点</h2><h3 id="数据来源多"><a href="#数据来源多" class="headerlink" title="数据来源多"></a>数据来源多</h3><p>DCE的数据主要有以下几个来源：</p>
-<ol>
-<li>后端和Docker的API<br> API是数据的主要来源，应用、服务、容器、存储、租户等信息都是通过API获取的。</li>
-<li>Docker API 所使用的 stream<br>stream 也是一个通信协议。Docker使用这个协议来通知容器状态的变化。</li>
-<li>后端的Socker<br>后端通过socket来通知应用等数据的状态的变化。</li>
-<li>localStorage<br>保存用户信息，租户信息等。</li>
-</ol>
-<p>数据来源多导致了两个问题：</p>
-<ol>
-<li>复用处理数据的逻辑比较困难：<br>比如容器列表这个数据。获取的时候我们需要一段代码来格式化容器列表。但是容器列表之后还会更新，由于更新的逻辑和获取的逻辑不一样，所以就很难再复用之前所使用的代码。</li>
-</ol>
-<p>2.获取数据的接口形式不统一：<br>   如今我们调用API时，都会返回一个Promise。但是不是所有的数据来源都能转换成Promise，比如Socket事件，结果就是在获取数据的时候，要先调用API，单后再监听socket事件。结果就是代码的冗余。</p>
-<h3 id="数据复杂"><a href="#数据复杂" class="headerlink" title="数据复杂"></a>数据复杂</h3><p>DCE数据的复杂还体现在三个方面：</p>
-<ol>
-<li>后端获取的数据不能直接展示，要经过一系列复杂逻辑的格式化</li>
-<li>其中部分格式化逻辑还包括发送请求。</li>
-<li>数据之间还存在着复杂的依赖关系。</li>
-</ol>
-<h3 id="数据更新困难"><a href="#数据更新困难" class="headerlink" title="数据更新困难"></a>数据更新困难</h3><p>缓存是个很好的想法，但是在一个对数据的实时性要求非常高的应用中，缓存很难做的足够好。<br>DCE中几乎所有数据都是会被全局使用到的。比如郭应用列表的数据，不仅要在应用列表中显示，也可能在侧边栏统计应用数量的地方要用到。所以说如果一处数据更新了，另一处没有更新，那就很尴尬了。还有就是数据的依赖关系，如果被依赖的数据改变了，此时也要更新依赖的缓存数据。但是实际上很多时候数据的依赖树太深了，有些依赖关系还不是很明显，结果就会忘记更新缓存。</p>
-<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>前端开发两大噩梦：状态管理和异步操作，同时以上三个难点也是传统的flux架构难以胜任的原因。Rxjs在这个时候就能很轻而易举的解决这两大困难。</p>
-<h2 id="DCE-的-Rxjs-架构图"><a href="#DCE-的-Rxjs-架构图" class="headerlink" title="DCE 的 Rxjs 架构图"></a>DCE 的 Rxjs 架构图</h2><p><img src="https://user-images.githubusercontent.com/9986655/28269434-ab78161a-6b34-11e7-8533-f531647e8883.png" alt=""></p>
-<p>alpha 为应用所需的顶层数据源，如版本信息，用户信息以及license等，需要这些数据才能进行下一步。<br>socket 为应用与后端数据实时通信的接口，当后端数据有更新时，通过 socket 发送消息给 hub，通知应用更新。<br>hub 为整个应用最主要的 observable ，是数据的分发中心，当收到socket的消息时，会及时的通知右侧底层数据源调用相应的接口获取最新的数据，而右侧规模较大的数据则由这些底层数据源 combinelatest 拼接而成，形成一颗单向流动的数据树。</p>
-<h3 id="Rxjs解决的困难"><a href="#Rxjs解决的困难" class="headerlink" title="Rxjs解决的困难"></a>Rxjs解决的困难</h3><ol>
-<li>统一了异步和同步的逻辑。解决异步问题。</li>
-<li>数据推送的机制把拉取的操作变成了推送的操作。解决更新问题。</li>
-<li>BehaviorSubject 可以缓存数据。解决了状态管理的问题。</li>
-</ol>
-
-          
+          <h1 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h1><p>目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="rxjs-dataflow-in-action/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -609,8 +840,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-17T20:31:59+08:00">
-                2017-07-17
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-19T12:16:58+08:00">
+                2017-08-19
               </time>
             
           </span>
@@ -706,28 +937,20 @@
 
       
         
-          
-            <h1 id="趟坑总结"><a href="#趟坑总结" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 v-for repeat 组件时控制台会出现警告：<br><img src="https://cloud.githubusercontent.com/assets/12231277/26719687/0f18e08c-47b8-11e7-8641-53f4a58679e1.png" alt="image"></p>
+          <h1 id="趟坑总结"><a href="#趟坑总结" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 v-for repeat 组件时控制台会出现警告：<br><img src="https://cloud.githubusercontent.com/assets/12231277/26719687/0f18e08c-47b8-11e7-8641-53f4a58679e1.png" alt="image"></p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在组件标签上使用 v-for ：</p>
 <ul>
-<li>加 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a></li>
+<li>加 <a href="https://cn.vuejs.org/v2/guide/list.html#key">:key</a></li>
 <li>使用 template 标签包裹该组件，再在 template 标签 上使用 v-for。</li>
 </ul>
 <hr>
-<h1 id="趟坑总结-1"><a href="#趟坑总结-1" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue data 属性中定义的变量名如果以 “_” 开头，就不能正确的赋值和渲染</p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p><a href="https://github.com/vuejs/vue/issues/2098" target="_blank" rel="external">https://github.com/vuejs/vue/issues/2098</a></p>
-<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><h2 id="变量名不要以-“-”-开头"><a href="#变量名不要以-“-”-开头" class="headerlink" title="变量名不要以 “_” 开头"></a>变量名不要以 “_” 开头</h2><h1 id="趟坑总结-2"><a href="#趟坑总结-2" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h2><p>在我们的前端组件库 dao-option 组件中 中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，dao-options 选出来的值并不在 dao-select 原本储存的 options 中。<br><img src="https://user-images.githubusercontent.com/19180212/27534266-ff8756b4-5a98-11e7-8c5f-bd9c8b650d7c.png" alt="dao-select-062601"></p>
-<h2 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h2><p>在组件中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，当 Object 地址改变，:key 中解析值没变时，组件会被复用，并不会被销毁。例如： dao-style 的 dao-select 中 dao-option 因为上述的描述导致组件没被销毁，最终 dao-options 选出来的值不在 dao-select 原本储存的 options 中。</p>
-<h2 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h2><h2 id="key-绑定复杂类型"><a href="#key-绑定复杂类型" class="headerlink" title=":key 绑定复杂类型"></a>:key 绑定复杂类型</h2><h1 id="趟坑总结-3"><a href="#趟坑总结-3" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue Router 中定义路由为 a/:id 形式时，从 a/1 跳转到 a/2 时，不会触发 component 的 created 等方法。</p>
-<h2 id="解决方法-3"><a href="#解决方法-3" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.<code>&lt;router-view :key=&quot;$route.path&quot;&gt;&lt;/router-view&gt;</code></p>
-<ol>
-<li>在 component 中监听 $route.path 的变化，手动触发 created 内的方法。<br>P.S. 可以参照 <a href="http://router.vuejs.org/zh-cn/essentials/dynamic-matching.html" target="_blank" rel="external">router-link</a> 中的 响应路由参数的变化</li>
-</ol>
-<hr>
-<h1 id="趟坑总结-4"><a href="#趟坑总结-4" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h2><p>不能直接 watch subscriptions 中的变量，回调不会执行。</p>
-<h2 id="解决方法-4"><a href="#解决方法-4" class="headerlink" title="解决方法"></a>解决方法</h2><p>要先在 data 中注册该变量</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="vue-issues-summarize/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1189,7 +1412,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1200,7 +1423,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1211,7 +1434,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

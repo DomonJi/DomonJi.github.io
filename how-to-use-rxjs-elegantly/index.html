@@ -1,28 +1,494 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Domon&#39;s Blog</title>
-  <subtitle>用代码创造艺术</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<!doctype html>
+
+
+
   
-  <link href="https://domon.me/"/>
-  <updated>2017-08-19T04:14:34.000Z</updated>
-  <id>https://domon.me/</id>
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <author>
-    <name>Domon</name>
+  
+  <link href="../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>如何更优雅地使用 Rxjs</title>
-    <link href="https://domon.me/how-to-use-rxjs-elegantly/"/>
-    <id>https://domon.me/how-to-use-rxjs-elegantly/</id>
-    <published>2017-08-18T06:32:13.000Z</published>
-    <updated>2017-08-19T04:14:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。</p>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="frontend,rxjs,vue-rx," />
+
+
+
+
+
+  <link rel="alternate" href="../atom.xml" title="Domon's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。
+我找了几处经典的案例，看看我们如何更优雅地使用 Rxjs 。
+案例案例 1我们先来看一处简单的案例12345678u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何更优雅地使用 Rxjs">
+<meta property="og:url" content="https://domon.me/how-to-use-rxjs-elegantly/index.html">
+<meta property="og:site_name" content="Domon's Blog">
+<meta property="og:description" content="我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。
+我找了几处经典的案例，看看我们如何更优雅地使用 Rxjs 。
+案例案例 1我们先来看一处简单的案例12345678u">
+<meta property="og:updated_time" content="2017-08-19T04:14:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何更优雅地使用 Rxjs">
+<meta name="twitter:description" content="我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。
+我找了几处经典的案例，看看我们如何更优雅地使用 Rxjs 。
+案例案例 1我们先来看一处简单的案例12345678u">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title> 如何更优雅地使用 Rxjs | Domon's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-82407317-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="/uploads/avator.png"
+               alt="Domon's Blog"/>
+        </a>
+      </div>
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Domon's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">用代码创造艺术</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://domon.me">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Domon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="../uploads/avator.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Domon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何更优雅地使用 Rxjs
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T14:32:13+08:00">
+                2017-08-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-19T12:14:34+08:00">
+                2017-08-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../categories/rxjs/" itemprop="url" rel="index">
+                    <span itemprop="name">rxjs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="how-to-use-rxjs-elegantly/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,573
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。</p>
 <p>我找了几处经典的案例，看看我们如何更优雅地使用 Rxjs 。</p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例 1"></a>案例 1</h3><p>我们先来看一处简单的案例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">userInfo$.subscribe(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</div><div class="line">  settingApi.getAccessKeys(v.name)</div><div class="line">    .then(<span class="function"><span class="params">accessKeys</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.accessKeys = accessKeys;</div><div class="line">      <span class="keyword">this</span>.updateRemoteBuildCommand(<span class="keyword">this</span>.rules.remoteBuildConfig);</div><div class="line">      <span class="keyword">this</span>.updateWebhook();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>这样的代码在项目中很常见，乍一看似乎没有什么问题，但我认为暗藏玄机：</p>
@@ -80,226 +546,629 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 给 Observable 添加的方法</span></div><div class="line"><span class="comment">// 在 Vue 实例中使用 observable.$subscribeTo(this, onNext, onError, onComplete)</span></div><div class="line"><span class="comment">// 等价于使用 this.$subscribeTo(observable, onNext, onError, onComplete)</span></div><div class="line">Rx.Observable.prototype.$subscribeTo = <span class="function"><span class="keyword">function</span> <span class="title">$subscribeTo</span>(<span class="params">_vm, onNext, onError, onComplete</span>) </span>&#123;</div><div class="line">  Vue.prototype.$subscribeTo.call(_vm, <span class="keyword">this</span>, onNext, onError, onComplete);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上述 <code>mounted</code> 函数便可更加简洁：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mounted() &#123;</div><div class="line">  <span class="keyword">this</span>.click$.switchMap(someApi.someMethod)</div><div class="line">    .concatMapTo(Rx.Observable.interval(<span class="number">1000</span>))</div><div class="line">    .combineLatest(someStream$$)</div><div class="line">    .first(<span class="comment">/** some logic */</span>)</div><div class="line">    .$subscribeTo(<span class="keyword">this</span>, onNext, onError, onComplete);</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
 <p>现在我们项目中对 <code>vue-rx</code> 的使用还只停留在给vue实例上加一个subscriptions对象，实际上 <code>vue-rx</code>还提供了很多很便利的方法和指令：<br><code>$watchAsObservable</code>可以观察一个<code>data</code>数据产生一个流。<br><code>$createObservableMethod</code>可以创建一个流，在一个方法每次调用的时候发出它的参数。<br><code>v-stream:click</code>可以从一个点击事件上创建一个流，每次点击可以发出你想要发出的数据。<br>还有<code>$eventToObservable</code>、<code>$fromDomEvent</code>等，大家可以参阅 <a href="https://github.com/vuejs/vue-rx/blob/master/README-CN.md" target="_blank" rel="external">vue-rx 文档</a></p>
-]]></content>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持讲鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Domon WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Domon Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Domon
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://domon.me/how-to-use-rxjs-elegantly/" title="如何更优雅地使用 Rxjs">https://domon.me/how-to-use-rxjs-elegantly/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../tags/frontend/" rel="tag"># frontend</a>
+          
+            <a href="../tags/rxjs/" rel="tag"># rxjs</a>
+          
+            <a href="../tags/vue-rx/" rel="tag"># vue-rx</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../rxjs-dataflow-in-action/" rel="next" title="Rxjs 数据流实践">
+                <i class="fa fa-chevron-left"></i> Rxjs 数据流实践
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58d2063a17c80129" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-    <summary type="html">
+      <div id="hypercomments_widget"></div>
     
-      &lt;p&gt;我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的b
-    
-    </summary>
-    
-      <category term="rxjs" scheme="https://domon.me/categories/rxjs/"/>
-    
-    
-      <category term="frontend" scheme="https://domon.me/tags/frontend/"/>
-    
-      <category term="rxjs" scheme="https://domon.me/tags/rxjs/"/>
-    
-      <category term="vue-rx" scheme="https://domon.me/tags/vue-rx/"/>
-    
-  </entry>
+  </div>
+
+
+        </div>
+        
+          
   
-  <entry>
-    <title>Rxjs 数据流实践</title>
-    <link href="https://domon.me/rxjs-dataflow-in-action/"/>
-    <id>https://domon.me/rxjs-dataflow-in-action/</id>
-    <published>2017-07-15T13:13:51.000Z</published>
-    <updated>2017-08-19T04:17:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h1><p>目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。</p>
-<a id="more"></a>
-<h2 id="复杂数据SPA应用的难点"><a href="#复杂数据SPA应用的难点" class="headerlink" title="复杂数据SPA应用的难点"></a>复杂数据SPA应用的难点</h2><h3 id="数据来源多"><a href="#数据来源多" class="headerlink" title="数据来源多"></a>数据来源多</h3><p>DCE的数据主要有以下几个来源：</p>
-<ol>
-<li>后端和Docker的API<br> API是数据的主要来源，应用、服务、容器、存储、租户等信息都是通过API获取的。</li>
-<li>Docker API 所使用的 stream<br>stream 也是一个通信协议。Docker使用这个协议来通知容器状态的变化。</li>
-<li>后端的Socker<br>后端通过socket来通知应用等数据的状态的变化。</li>
-<li>localStorage<br>保存用户信息，租户信息等。</li>
-</ol>
-<p>数据来源多导致了两个问题：</p>
-<ol>
-<li>复用处理数据的逻辑比较困难：<br>比如容器列表这个数据。获取的时候我们需要一段代码来格式化容器列表。但是容器列表之后还会更新，由于更新的逻辑和获取的逻辑不一样，所以就很难再复用之前所使用的代码。</li>
-</ol>
-<p>2.获取数据的接口形式不统一：<br>   如今我们调用API时，都会返回一个Promise。但是不是所有的数据来源都能转换成Promise，比如Socket事件，结果就是在获取数据的时候，要先调用API，单后再监听socket事件。结果就是代码的冗余。</p>
-<h3 id="数据复杂"><a href="#数据复杂" class="headerlink" title="数据复杂"></a>数据复杂</h3><p>DCE数据的复杂还体现在三个方面：</p>
-<ol>
-<li>后端获取的数据不能直接展示，要经过一系列复杂逻辑的格式化</li>
-<li>其中部分格式化逻辑还包括发送请求。</li>
-<li>数据之间还存在着复杂的依赖关系。</li>
-</ol>
-<h3 id="数据更新困难"><a href="#数据更新困难" class="headerlink" title="数据更新困难"></a>数据更新困难</h3><p>缓存是个很好的想法，但是在一个对数据的实时性要求非常高的应用中，缓存很难做的足够好。<br>DCE中几乎所有数据都是会被全局使用到的。比如郭应用列表的数据，不仅要在应用列表中显示，也可能在侧边栏统计应用数量的地方要用到。所以说如果一处数据更新了，另一处没有更新，那就很尴尬了。还有就是数据的依赖关系，如果被依赖的数据改变了，此时也要更新依赖的缓存数据。但是实际上很多时候数据的依赖树太深了，有些依赖关系还不是很明显，结果就会忘记更新缓存。</p>
-<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>前端开发两大噩梦：状态管理和异步操作，同时以上三个难点也是传统的flux架构难以胜任的原因。Rxjs在这个时候就能很轻而易举的解决这两大困难。</p>
-<h2 id="DCE-的-Rxjs-架构图"><a href="#DCE-的-Rxjs-架构图" class="headerlink" title="DCE 的 Rxjs 架构图"></a>DCE 的 Rxjs 架构图</h2><p><img src="https://user-images.githubusercontent.com/9986655/28269434-ab78161a-6b34-11e7-8533-f531647e8883.png" alt=""></p>
-<p>alpha 为应用所需的顶层数据源，如版本信息，用户信息以及license等，需要这些数据才能进行下一步。<br>socket 为应用与后端数据实时通信的接口，当后端数据有更新时，通过 socket 发送消息给 hub，通知应用更新。<br>hub 为整个应用最主要的 observable ，是数据的分发中心，当收到socket的消息时，会及时的通知右侧底层数据源调用相应的接口获取最新的数据，而右侧规模较大的数据则由这些底层数据源 combinelatest 拼接而成，形成一颗单向流动的数据树。</p>
-<h3 id="Rxjs解决的困难"><a href="#Rxjs解决的困难" class="headerlink" title="Rxjs解决的困难"></a>Rxjs解决的困难</h3><ol>
-<li>统一了异步和同步的逻辑。解决异步问题。</li>
-<li>数据推送的机制把拉取的操作变成了推送的操作。解决更新问题。</li>
-<li>BehaviorSubject 可以缓存数据。解决了状态管理的问题。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;遇到的困难&quot;&gt;&lt;a href=&quot;#遇到的困难&quot; class=&quot;headerlink&quot; title=&quot;遇到的困难&quot;&gt;&lt;/a&gt;遇到的困难&lt;/h1&gt;&lt;p&gt;目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Rxjs" scheme="https://domon.me/categories/Rxjs/"/>
-    
-    
-      <category term="frontend" scheme="https://domon.me/tags/frontend/"/>
-    
-      <category term="Rxjs" scheme="https://domon.me/tags/Rxjs/"/>
-    
-  </entry>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="../uploads/avator.png"
+               alt="Domon" />
+          <p class="site-author-name" itemprop="name">Domon</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="../archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="../categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="../tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="../atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Domonji" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/domonji95" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/646953127" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/domonji" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-quora"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:domonji95@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://simplyy.space/" title="SimplyY" target="_blank">SimplyY</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-1"><span class="nav-number">1.1.</span> <span class="nav-text">案例 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-2"><span class="nav-number">1.2.</span> <span class="nav-text">案例 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-3"><span class="nav-number">1.3.</span> <span class="nav-text">案例 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-4"><span class="nav-number">1.4.</span> <span class="nav-text">案例 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-5"><span class="nav-number">1.5.</span> <span class="nav-text">案例 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还有一点更重要的"><span class="nav-number">1.6.</span> <span class="nav-text">还有一点更重要的</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  <entry>
-    <title>vuejs 踩坑及经验总结</title>
-    <link href="https://domon.me/vue-issues-summarize/"/>
-    <id>https://domon.me/vue-issues-summarize/</id>
-    <published>2017-05-22T12:38:11.000Z</published>
-    <updated>2017-08-19T04:16:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="趟坑总结"><a href="#趟坑总结" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 v-for repeat 组件时控制台会出现警告：<br><img src="https://cloud.githubusercontent.com/assets/12231277/26719687/0f18e08c-47b8-11e7-8641-53f4a58679e1.png" alt="image"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在组件标签上使用 v-for ：</p>
-<ul>
-<li>加 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a></li>
-<li>使用 template 标签包裹该组件，再在 template 标签 上使用 v-for。</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h1 id="趟坑总结-1"><a href="#趟坑总结-1" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue data 属性中定义的变量名如果以 “_” 开头，就不能正确的赋值和渲染</p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p><a href="https://github.com/vuejs/vue/issues/2098" target="_blank" rel="external">https://github.com/vuejs/vue/issues/2098</a></p>
-<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><h2 id="变量名不要以-“-”-开头"><a href="#变量名不要以-“-”-开头" class="headerlink" title="变量名不要以 “_” 开头"></a>变量名不要以 “_” 开头</h2><h1 id="趟坑总结-2"><a href="#趟坑总结-2" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h2><p>在我们的前端组件库 dao-option 组件中 中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，dao-options 选出来的值并不在 dao-select 原本储存的 options 中。<br><img src="https://user-images.githubusercontent.com/19180212/27534266-ff8756b4-5a98-11e7-8c5f-bd9c8b650d7c.png" alt="dao-select-062601"></p>
-<h2 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h2><p>在组件中使用 <a href="https://cn.vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">:key</a> 时，如果 v-for 枚举的值是 Object，但是 :key 中的值是简单类型时，当 Object 地址改变，:key 中解析值没变时，组件会被复用，并不会被销毁。例如： dao-style 的 dao-select 中 dao-option 因为上述的描述导致组件没被销毁，最终 dao-options 选出来的值不在 dao-select 原本储存的 options 中。</p>
-<h2 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h2><h2 id="key-绑定复杂类型"><a href="#key-绑定复杂类型" class="headerlink" title=":key 绑定复杂类型"></a>:key 绑定复杂类型</h2><h1 id="趟坑总结-3"><a href="#趟坑总结-3" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Vue Router 中定义路由为 a/:id 形式时，从 a/1 跳转到 a/2 时，不会触发 component 的 created 等方法。</p>
-<h2 id="解决方法-3"><a href="#解决方法-3" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.<code>&lt;router-view :key=&quot;$route.path&quot;&gt;&lt;/router-view&gt;</code></p>
-<ol>
-<li>在 component 中监听 $route.path 的变化，手动触发 created 内的方法。<br>P.S. 可以参照 <a href="http://router.vuejs.org/zh-cn/essentials/dynamic-matching.html" target="_blank" rel="external">router-link</a> 中的 响应路由参数的变化</li>
-</ol>
-<hr>
-<h1 id="趟坑总结-4"><a href="#趟坑总结-4" class="headerlink" title="趟坑总结"></a>趟坑总结</h1><h2 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h2><p>不能直接 watch subscriptions 中的变量，回调不会执行。</p>
-<h2 id="解决方法-4"><a href="#解决方法-4" class="headerlink" title="解决方法"></a>解决方法</h2><p>要先在 data 中注册该变量</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;趟坑总结&quot;&gt;&lt;a href=&quot;#趟坑总结&quot; class=&quot;headerlink&quot; title=&quot;趟坑总结&quot;&gt;&lt;/a&gt;趟坑总结&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在使用 v-for repeat 组件时控制台会出现警告：&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/12231277/26719687/0f18e08c-47b8-11e7-8641-53f4a58679e1.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h2&gt;&lt;p&gt;在组件标签上使用 v-for ：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;加 &lt;a href=&quot;https://cn.vuejs.org/v2/guide/list.html#key&quot;&gt;:key&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;使用 template 标签包裹该组件，再在 template 标签 上使用 v-for。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="vuejs" scheme="https://domon.me/categories/vuejs/"/>
-    
-    
-      <category term="frontend" scheme="https://domon.me/tags/frontend/"/>
-    
-      <category term="vuejs" scheme="https://domon.me/tags/vuejs/"/>
-    
-  </entry>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Domon</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   
-  <entry>
-    <title>2017阿里前端暑假实习面试经历</title>
-    <link href="https://domon.me/ali-frontend-trainee-interview/"/>
-    <id>https://domon.me/ali-frontend-trainee-interview/</id>
-    <published>2017-03-19T02:28:32.000Z</published>
-    <updated>2017-07-17T12:19:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://c1.staticflickr.com/3/2881/32743400714_342625c1ce_b.jpg" alt=""></p>
-<p>3月6日上午 10:27 25分钟</p>
-<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><blockquote>
-<h3 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h3></blockquote>
-<p>主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目。</p>
-<a id="more"></a>
-<blockquote>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3></blockquote>
-<p>是指一个函数能记住并访问它所在的作用域（相关内容具体可以看《你不知道的JavaScript》），闭包产生的原因是函数作用域。</p>
-<blockquote>
-<h3 id="闭包有哪些优缺点"><a href="#闭包有哪些优缺点" class="headerlink" title="闭包有哪些优缺点"></a>闭包有哪些优缺点</h3></blockquote>
-<p>我一开口讲内存泄漏问题，面试官就打断并提问，如果同时有大量请求，每次请求都会调用一个<code>settimeout</code>，此时造成大量闭包内存如何解决，我当时没回答上来……</p>
-<blockquote>
-<h3 id="解释一下尾递归"><a href="#解释一下尾递归" class="headerlink" title="解释一下尾递归"></a>解释一下尾递归</h3></blockquote>
-<p>尾递归指的是函数的最后一次调用是完全调用自身的函数。V8引擎会对尾递归调用作相应的优化。</p>
-<blockquote>
-<h3 id="V8引擎对尾递归调用有什么样的优化"><a href="#V8引擎对尾递归调用有什么样的优化" class="headerlink" title="V8引擎对尾递归调用有什么样的优化"></a>V8引擎对尾递归调用有什么样的优化</h3></blockquote>
-<p>不需要保存调用栈信息，只需要保存调用记录。</p>
-<blockquote>
-<h3 id="遍历数组有哪些方法"><a href="#遍历数组有哪些方法" class="headerlink" title="遍历数组有哪些方法"></a>遍历数组有哪些方法</h3></blockquote>
-<p><code>forEach</code>,<code>map</code>,<code>reduce</code>,<code>filter</code></p>
-<p>其实还有<code>some</code>,<code>every</code>,<code>reduceRight</code>我当时没想起来</p>
-<blockquote>
-<h3 id="有哪些-HTTP-Methods"><a href="#有哪些-HTTP-Methods" class="headerlink" title="有哪些 HTTP Methods"></a>有哪些 HTTP Methods</h3></blockquote>
-<p><code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DELETE</code>,<code>HEAD</code>,<code>PATCH</code>,<code>OPTION</code></p>
-<p>面试官说还有<code>TRACE</code>，我开始慌了😂</p>
-<blockquote>
-<h3 id="CSS垂直居中的方法"><a href="#CSS垂直居中的方法" class="headerlink" title="CSS垂直居中的方法"></a>CSS垂直居中的方法</h3></blockquote>
-<p>这个问题可以看《CSS揭秘》 绝对定位方法、基于视口单位方法、flexbox方法。</p>
-<blockquote>
-<h3 id="浏览器事件循环"><a href="#浏览器事件循环" class="headerlink" title="浏览器事件循环"></a>浏览器事件循环</h3></blockquote>
-<p>浏览器会把异步操作放入事件队列中，主线程调用栈全部弹空之后会去检查事件队列并把事件队列中需要执行的事件放入主线程调用，如此循环。</p>
-<blockquote>
-<h3 id="Vuejs的特点"><a href="#Vuejs的特点" class="headerlink" title="Vuejs的特点"></a>Vuejs的特点</h3></blockquote>
-<p>组件化, 双向数据绑定, defineProperties数据劫持,Observer and Watcher, 渐进式, Virtual Dom.</p>
-<blockquote>
-<h3 id="XSS-CSRF"><a href="#XSS-CSRF" class="headerlink" title="XSS CSRF"></a>XSS CSRF</h3></blockquote>
-<p>我就讲了他们的原理，这两个知识点网上应该有很多介绍。</p>
-<blockquote>
-<h3 id="提问环节"><a href="#提问环节" class="headerlink" title="提问环节"></a>提问环节</h3></blockquote>
-<p>阿里这样的大公司会偏向于使用开源的框架还是自己造的轮子？</p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>感觉自己回答的还比较轻松，除了上面提到的几个没回答上来的问题。结果还是挂了，学长告知是阿里一个P7级别的主管按照社招标准来面试我的，运气也是有点差。希望再接再厉，查漏补缺，吸取经验教训，为以后的面试做准备吧。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/3/2881/32743400714_342625c1ce_b.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;3月6日上午 10:27 25分钟&lt;/p&gt;
-&lt;h2 id=&quot;一面&quot;&gt;&lt;a href=&quot;#一面&quot; class=&quot;headerlink&quot; title=&quot;一面&quot;&gt;&lt;/a&gt;一面&lt;/h2&gt;&lt;blockquote&gt;
-&lt;h3 id=&quot;自我介绍&quot;&gt;&lt;a href=&quot;#自我介绍&quot; class=&quot;headerlink&quot; title=&quot;自我介绍&quot;&gt;&lt;/a&gt;自我介绍&lt;/h3&gt;&lt;/blockquote&gt;
-&lt;p&gt;主要就讲了自己的学校，学过的课程，给学校做过的项目啊，自己做过的项目。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Interview" scheme="https://domon.me/categories/Interview/"/>
-    
-    
-      <category term="interview" scheme="https://domon.me/tags/interview/"/>
-    
-      <category term="alibaba" scheme="https://domon.me/tags/alibaba/"/>
-    
-      <category term="frontend" scheme="https://domon.me/tags/frontend/"/>
-    
-  </entry>
+    <span class="site-uv"><i class="fa fa-user"></i> 本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span>
   
-  <entry>
-    <title>Hello World</title>
-    <link href="https://domon.me/hello-world/"/>
-    <id>https://domon.me/hello-world/</id>
-    <published>2017-03-13T03:01:26.000Z</published>
-    <updated>2017-03-23T08:01:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
+
   
-</feed>
+    <span class="site-pv"><i class="fa fa-eye"></i> 本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="../lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="../lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="../lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="../js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="../js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="../js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 88550, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 88550, xid: "how-to-use-rxjs-elegantly/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/88550/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

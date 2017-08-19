@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Domon's Blog">
 <meta property="og:description" content="遇到的困难目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理">
 <meta property="og:image" content="https://user-images.githubusercontent.com/9986655/28269434-ab78161a-6b34-11e7-8533-f531647e8883.png">
-<meta property="og:updated_time" content="2017-07-17T13:14:35.000Z">
+<meta property="og:updated_time" content="2017-08-19T04:17:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rxjs 数据流实践">
 <meta name="twitter:description" content="遇到的困难目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理">
@@ -383,8 +383,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-17T21:14:35+08:00">
-                2017-07-17
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-19T12:17:24+08:00">
+                2017-08-19
               </time>
             
           </span>
@@ -485,6 +485,7 @@
 
       
         <h1 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h1><p>目前公司的核心项目DCE(DaoCloud Enterprise)是一个非常复杂的SPA，它的复杂性主要体现在数据和交互逻辑两方面上。在数据方面，DCE管理着相当多的数据。在交互逻辑方面，DCE中的每一个操作几乎都是牵一发而动全身。但是交互逻辑的复杂归根结底是表现为数据的复杂，因为每一次交互，本质上都是在处理数据。为了保证数据的正确性，原来使用angularjs写的DCE中有很多数据处理、检测数据变化的代码，结果导致应用非常的卡顿。</p>
+<a id="more"></a>
 <h2 id="复杂数据SPA应用的难点"><a href="#复杂数据SPA应用的难点" class="headerlink" title="复杂数据SPA应用的难点"></a>复杂数据SPA应用的难点</h2><h3 id="数据来源多"><a href="#数据来源多" class="headerlink" title="数据来源多"></a>数据来源多</h3><p>DCE的数据主要有以下几个来源：</p>
 <ol>
 <li>后端和Docker的API<br> API是数据的主要来源，应用、服务、容器、存储、租户等信息都是通过API获取的。</li>
@@ -602,6 +603,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="../how-to-use-rxjs-elegantly/" rel="prev" title="如何更优雅地使用 Rxjs">
+                如何更优雅地使用 Rxjs <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -680,7 +685,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="../archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -691,7 +696,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="../categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -702,7 +707,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="../tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
