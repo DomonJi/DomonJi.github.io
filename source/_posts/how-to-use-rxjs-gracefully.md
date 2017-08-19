@@ -5,11 +5,16 @@ tags:
   - rxjs
   - frontend
   - vue-rx
-category: rxjs
+category: Rxjs
 ---
+
+## 引言
+
 我们的 DCE 项目使用 Rxjs 作为数据流动的框架，这种响应式的编程思想很适合 DCE 这样的数据流动复杂的应用，却也带来不小的使用门槛。近日，在审阅我们代码的过程中，我发现了很多不规范甚至是不正确的 Rxjs 使用方法，不仅造成了代码丑陋，冗余，甚至会引起意想不到的bug。
 
 我找了几处经典的案例，看看我们如何更优雅地使用 Rxjs 。
+
+<!--more-->
 
 ## 案例
 
@@ -288,7 +293,7 @@ socket$$
 关于 `delayWhen`： [delayWhen](http://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-delayWhen)
 
 ---
-### 还有一点更重要的
+## 更重要的一点
 
 我们DCE代码中很多地方，比如创建镜像，都会给某个按钮点击事件绑定一个方法，在这个方法里面去`subscribe`一个流，然后去做一些操作，我觉得这样是不合理的，因为如果没有对点击加以限制，用户不断的点击，就会不断的去`subcribe`，会引起一些不可预料的结果，甚至引起性能问题，尤其是在一些点击之后需要轮询操作的地方。实际上我们应该在点击的时候做 `next` 操作而不是 `subcribe`操作。
 
